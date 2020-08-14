@@ -3,7 +3,6 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Image from "gatsby-image"
 import SEO from "../components/seo"
-import BackgroundImage from "gatsby-background-image"
 import ArticleContainer from "../components/Elements/article"
 import Button from "./../components/Elements/button"
 
@@ -188,7 +187,7 @@ const IndexPage = props => {
             </p>
           </div>
         </Section>
-        <Section>
+        <Section id="news">
           <div>
             <h3>Aktualności</h3>
           </div>

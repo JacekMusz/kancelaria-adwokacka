@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import scrollTo from "gatsby-plugin-smoothscroll"
+import { navigate } from "gatsby"
 
 const NavigationWrapper = styled.nav`
   width: 70%;
@@ -52,6 +54,13 @@ const StyledLink = styled(Link)`
 `
 
 const NavigationHorizontal = () => {
+  const handleScroll = () => {
+    setTimeout(() => {
+      scrollTo("#news")
+    }, 200)
+
+    window.onload = scrollTo("#news")
+  }
   return (
     <NavigationWrapper>
       <LinkWrapper>
@@ -59,7 +68,9 @@ const NavigationHorizontal = () => {
         <StyledLink to="/">O koncelarii</StyledLink>
       </LinkWrapper>
       <LinkWrapper>
-        <StyledLink to="/aktualnosci">Aktualności</StyledLink>
+        <StyledLink to="/" onClick={() => handleScroll()}>
+          Aktualności
+        </StyledLink>
       </LinkWrapper>
       <LinkWrapper>
         {" "}

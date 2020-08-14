@@ -32,7 +32,7 @@ const Article = styled.article`
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.03);
-    transform: scale(1.02);
+    transform: scale(1.015);
   }
 `
 const StyledButton = styled.button`
