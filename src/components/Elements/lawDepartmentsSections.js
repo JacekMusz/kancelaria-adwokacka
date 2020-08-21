@@ -3,21 +3,26 @@ import styled from "styled-components"
 
 const LawDepartment = styled.section`
   width: 90%;
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   color: #171a1c;
   border-radius: 3px;
   transition: 0.3s;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   position: relative;
-
+  border-radius: 5px;
+  background-color: ${({ showText }) =>
+    showText ? "rgba(0, 0, 0, 0.03)" : null};
   .law-department__title {
-    color: black;
+    color: ${({ showText }) => (showText ? "#cdbba5" : "#171a1c")};
+    border-radius: 5px 5px 0 0;
     display: block;
     font-size: 20px;
     position: relative;
-    border-radius: 5px 5px 0 0;
+    padding: 10px;
+    background-color: ${({ showText }) => (showText ? "#171a1c" : null)};
     cursor: ${({ showText }) => (showText ? null : "pointer")};
     transition: 0.4s;
     padding-left: ${({ showText }) => (showText ? "50px" : "20px")};
@@ -30,13 +35,12 @@ const LawDepartment = styled.section`
     font-size: 15px;
     line-height: 22px;
     margin: 10px;
-    transition: 0.5s;
   }
 `
 const StyledButton = styled.button`
   width: 150px;
   height: 30px;
-  margin: 0 5px;
+  margin: 5px;
   padding: 5px 15px;
   border: none;
   border: 1px solid #cdbba5;

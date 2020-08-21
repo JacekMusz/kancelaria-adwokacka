@@ -84,7 +84,6 @@ const SectionsContainer = styled.div`
   justify-content: center;
   overflow: hidden;
 `
-
 const Section = styled.section`
   min-height: 30vh;
   width: 90vw;

@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
@@ -16,7 +15,7 @@ const PageContainer = styled.div`
 `
 const SectionsContainer = styled.div`
   min-height: 100vh;
-  width: 70%;
+  width: 65%;
   margin: 50px 0;
   display: flex;
   flex-direction: column;
@@ -34,7 +33,7 @@ const Title = styled.h3`
 
 const SubTitle = styled.h3`
   display: block;
-  width: 30%;
+  width: 35%;
   text-align: center;
   font-size: 24px;
   margin-top: 20px;
@@ -45,7 +44,7 @@ const Aktualnosci = () => (
   <Layout>
     <SEO title="dzialy-prawa" />
     <PageContainer>
-      <SubTitle>Działy Prawa</SubTitle>
+      <SubTitle>Obszary działalności kancelarii</SubTitle>
       <SectionsContainer>
         {sections.map(item => {
           return (

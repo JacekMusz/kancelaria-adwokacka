@@ -9,6 +9,7 @@ import { FiMail } from "react-icons/fi"
 
 const MainContainer = styled.div`
   max-width: 100vw;
+  overflow: hidden;
 `
 
 const MainContent = styled.main`
@@ -35,6 +36,8 @@ const Layout = ({ children }) => {
     flex-direction: column;
     width: 48%;
     color: white;
+    justify-content: center;
+    align-content: center;
     .adrress-icon {
       color: white;
       margin-right: 10px;
@@ -98,33 +101,45 @@ const Layout = ({ children }) => {
     right: 10px;
     font-size: 8px;
   `
+  const StyledAdrressContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 0;
+  `
+
   return (
     <MainContainer>
       <Header siteTitle={data.site.siteMetadata.title} />
       <MainContent>{children}</MainContent>
       <Footer>
-        <StyledAdrress>
-          <h4>Dane kontaktowe</h4>
-          <p>
-            Adwokat Katarzyna Pałuba Kancelaria Adwokacka
+        <StyledAdrressContainer>
+          <StyledAdrress>
+            <h4>Dane kontaktowe</h4>
             <br />
-            ul. 1 Maja 54, 96-300 Żyrardów
+            <p>
+              Adwokat Katarzyna Bartoszewicz Kancelaria Adwokacka
+              <br />
+              ul. 1 Maja 54, 96-300 Żyrardów
+              <br />
+              96-300 Żyrardów
+              <br />
+              NIP 8381761414
+            </p>
+          </StyledAdrress>
+          <StyledAdrress>
+            <h4>Kontakt</h4>
             <br />
-            96-300 Żyrardów
-            <br />
-            NIP 8381761414
-          </p>
-        </StyledAdrress>
-        <StyledAdrress>
-          <h4>Kontakt</h4>
-          <p>
-            <FaPhone className="adrress-icon" /> 22 207 29 08, 533 270 008
-            <br />
-            <br />
-            <FiMail className="adrress-icon" />
-            kancelaria@adwokatpaluba.pl
-          </p>
-        </StyledAdrress>
+            <p>
+              <FaPhone className="adrress-icon" />
+              +48 533 270 008
+              <br />
+              <br />
+              <FiMail className="adrress-icon" />
+              bartoszewicz@zyrardow-adwokat.pl
+            </p>
+          </StyledAdrress>
+        </StyledAdrressContainer>
         <CopyrightWrapper>
           {/* &copy; Copyright {d.getFullYear()}, Katarzyna Bartoszewicz */}
         </CopyrightWrapper>
