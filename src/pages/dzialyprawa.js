@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import LawDepartmentsSections from "./../components/Elements/lawDepartmentsSections"
+import StyledH3 from "../components/Elements/styledH3"
 
 const PageContainer = styled.div`
   min-height: 100vh;
@@ -31,20 +32,20 @@ const Title = styled.h3`
   margin-top: 20px;
 `
 
-const SubTitle = styled.h3`
-  display: block;
-  width: 35%;
-  text-align: center;
-  font-size: 24px;
-  margin-top: 20px;
-  border-bottom: 1px solid #cdbba5;
+const StyledH3Wrapper = styled.div`
+  width: 30%;
+  margin: 20px;
 `
 
 const Aktualnosci = () => (
   <Layout>
     <SEO title="dzialy-prawa" />
     <PageContainer>
-      <SubTitle>Obszary działalności kancelarii</SubTitle>
+      <StyledH3Wrapper>
+        {" "}
+        <StyledH3 text={"Obszary działalności kancelarii"} />{" "}
+      </StyledH3Wrapper>
+
       <SectionsContainer>
         {sections.map(item => {
           return (

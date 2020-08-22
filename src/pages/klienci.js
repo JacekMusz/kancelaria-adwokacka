@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
+import StyledH3 from "../components/Elements/styledH3"
 import styled from "styled-components"
 
 const PageContainer = styled.div`
@@ -12,9 +12,32 @@ const PageContainer = styled.div`
 
 const Section = styled.div`
   width: 45%;
-  h3 {
-    width: 100%;
-    text-align: center;
+  @media (min-width: 360px) {
+  }
+
+  @media (min-width: 410px) {
+    p {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+  @media (min-width: 767px) {
+    p {
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+  @media (min-width: 1199px) {
+    p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+  @media (min-width: 1599px) {
+    p {
+      font-size: 15px;
+      line-height: 19px;
+    }
   }
 `
 
@@ -23,7 +46,7 @@ const Klienci = () => (
     <SEO title="klienci" />
     <PageContainer>
       <Section>
-        <h3>Klienci indywidualni</h3>
+        <StyledH3 text={"Klienci indywidualni"}></StyledH3>
         <p>
           Kancelaria Adwokacka świadczy szybką i wszechstronną pomoc prawną
           osobom fizycznym w rozwiązywaniu ich spraw prywatnych. W ramach
@@ -34,7 +57,7 @@ const Klienci = () => (
         </p>
       </Section>
       <Section>
-        <h3>Przedsiębiorstwa</h3>
+        <StyledH3 text={"Przedsiębiorstwa"}></StyledH3>
         <p>
           W ramach usług świadczenia usług podmiotom gospodarczym oraz
           instytucjom Kancelaria oferuje: doradztwo prawne, reprezentację przed

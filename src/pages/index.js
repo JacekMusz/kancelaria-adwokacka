@@ -5,6 +5,7 @@ import Image from "gatsby-image"
 import SEO from "../components/seo"
 import ArticleContainer from "../components/Elements/article"
 import Button from "./../components/Elements/button"
+import StyledH3 from "../components/Elements/styledH3"
 
 const StyledImage = styled(Image)`
   object-fit: cover;
@@ -168,7 +169,7 @@ const IndexPage = props => {
       <SectionsContainer>
         <Section>
           <div>
-            <h3>O kancelarii</h3>
+            <StyledH3 text={"O koncelarii"}></StyledH3>
           </div>
           <div className="description-container">
             <p>
@@ -188,7 +189,7 @@ const IndexPage = props => {
         </Section>
         <Section id="news">
           <div>
-            <h3>Aktualności</h3>
+            <StyledH3 text={"Aktualności"}></StyledH3>
           </div>
           <div className="articles-container">
             {articlesData.map((item, number) => {

@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
       color: white;
       margin-right: 10px;
     }
-    h3 {
+    h4 {
       font-size: 14px;
     }
     p {
@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
     }
 
     @media (min-width: 410px) {
-      h3 {
+      h4 {
         font-size: 15px;
       }
       p {
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
     /* Media for iPad (768px) */
     @media (min-width: 767px) {
       width: 40%;
-      h3 {
+      h4 {
         font-size: 16px;
       }
       p {
@@ -76,7 +76,7 @@ const Layout = ({ children }) => {
       }
     }
     @media (min-width: 1199px) {
-      h3 {
+      h4 {
         font-size: 18px;
       }
       p {
@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
       }
     }
     @media (min-width: 1599px) {
-      h3 {
+      h4 {
         font-size: 20px;
       }
       p {
