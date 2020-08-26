@@ -1,14 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Header from "./header"
+import AppBar from "./appBar"
 import "./layout.css"
 import styled from "styled-components"
 import { FaPhone } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
 
 const MainContainer = styled.div`
-  max-width: 100vw;
+  width: 100%;
   overflow: hidden;
 `
 
@@ -16,6 +16,7 @@ const MainContent = styled.main`
   padding-top: 10vh;
   max-width: 100vw;
   background-color: rgb(230, 230, 230);
+  min-height: 100vh;
 `
 const Footer = styled.footer`
   background-color: #171a1c;
@@ -64,7 +65,6 @@ const Layout = ({ children }) => {
         line-height: 15px;
       }
     }
-    /* Media for iPad (768px) */
     @media (min-width: 767px) {
       width: 40%;
       h4 {
@@ -110,7 +110,7 @@ const Layout = ({ children }) => {
 
   return (
     <MainContainer>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <AppBar siteTitle={data.site.siteMetadata.title} />
       <MainContent>{children}</MainContent>
       <Footer>
         <StyledAdrressContainer>

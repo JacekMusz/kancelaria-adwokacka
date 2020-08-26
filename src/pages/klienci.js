@@ -7,11 +7,15 @@ import styled from "styled-components"
 const PageContainer = styled.div`
   width: 100%;
   display: flex;
-  padding: 5%;
+  justify-content: space-around;
+  padding-top: 5%;
 `
 
 const Section = styled.div`
-  width: 45%;
+  width: 40%;
+  p {
+    font-size: 16px;
+  }
   @media (min-width: 360px) {
   }
 
@@ -29,13 +33,13 @@ const Section = styled.div`
   }
   @media (min-width: 1199px) {
     p {
-      font-size: 14px;
-      line-height: 18px;
+      font-size: 18px;
+      line-height: 20px;
     }
   }
   @media (min-width: 1599px) {
     p {
-      font-size: 15px;
+      font-size: 20px;
       line-height: 19px;
     }
   }
@@ -46,7 +50,10 @@ const Klienci = () => (
     <SEO title="klienci" />
     <PageContainer>
       <Section>
-        <StyledH3 text={"Klienci indywidualni"}></StyledH3>
+        <StyledH3
+          margin={" 0 0 20px 0"}
+          text={"Klienci indywidualni"}
+        ></StyledH3>
         <p>
           Kancelaria Adwokacka świadczy szybką i wszechstronną pomoc prawną
           osobom fizycznym w rozwiązywaniu ich spraw prywatnych. W ramach
@@ -57,7 +64,7 @@ const Klienci = () => (
         </p>
       </Section>
       <Section>
-        <StyledH3 text={"Przedsiębiorstwa"}></StyledH3>
+        <StyledH3 margin={" 0 0 20px 0"} text={"Przedsiębiorstwa"}></StyledH3>
         <p>
           W ramach usług świadczenia usług podmiotom gospodarczym oraz
           instytucjom Kancelaria oferuje: doradztwo prawne, reprezentację przed

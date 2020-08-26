@@ -7,14 +7,12 @@ import { navigate } from "gatsby"
 const NavigationWrapper = styled.nav`
   width: 70%;
   height: 100%;
-  padding-left: 30%;
+  padding: 0 5% 0 30%;
   justify-content: space-around;
   align-items: center;
-  margin-right: 20px;
-  display: none;
+  display: flex;
 
   @media (min-width: 767px) {
-    display: flex;
     font-size: 14px;
   }
   @media (min-width: 1199px) {
@@ -25,16 +23,11 @@ const LinkWrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  transform: skew(-15deg);
   transition: 0.3s;
-  /* &:hover {
-    background-color: black;
-  } */
 `
 const StyledLink = styled(Link)`
   color: #cdbba5;
   text-decoration: none;
-  transform: skew(15deg);
   &:after {
     display: block;
     content: " ";
