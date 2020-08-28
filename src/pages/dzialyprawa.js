@@ -9,15 +9,15 @@ const PageContainer = styled.div`
   min-height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: "space-between";
   align-items: "space-around";
   overflow: hidden;
 `
 const SectionsContainer = styled.div`
-  min-height: 100vh;
-  width: 65%;
-  margin: 50px 0;
+  min-height: 50vh;
+  width: 90%;
+  margin: 5%;
   display: flex;
   flex-direction: column;
   justify-content: "space-between";
@@ -25,27 +25,15 @@ const SectionsContainer = styled.div`
   border-left: 1px solid #cdbba5;
 `
 
-const Title = styled.h3`
-  width: 100%;
-  text-align: center;
-  font-size: 24px;
-  margin-top: 20px;
-`
-
-const StyledH3Wrapper = styled.div`
-  width: 30%;
-  margin: 20px;
-`
-
 const Aktualnosci = () => (
   <Layout>
     <SEO title="dzialy-prawa" />
     <PageContainer>
-      <StyledH3Wrapper>
-        {" "}
-        <StyledH3 text={"Obszary działalności kancelarii"} />{" "}
-      </StyledH3Wrapper>
-
+      <StyledH3
+        width={"90%"}
+        margin={"5%"}
+        text={"Obszary naszej działalności "}
+      />{" "}
       <SectionsContainer>
         {sections.map(item => {
           return (

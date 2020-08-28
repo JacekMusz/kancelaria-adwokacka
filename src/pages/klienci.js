@@ -3,45 +3,30 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import StyledH3 from "../components/Elements/styledH3"
 import styled from "styled-components"
+import StyledText from "../components/Elements/styledText"
 
 const PageContainer = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  padding-top: 5%;
+  padding: 5%;
 `
 
 const Section = styled.div`
-  width: 40%;
-  p {
-    font-size: 16px;
-  }
+  width: 100%;
+  margin-bottom: 20px;
+
   @media (min-width: 360px) {
   }
 
   @media (min-width: 410px) {
-    p {
-      font-size: 12px;
-      line-height: 15px;
-    }
   }
   @media (min-width: 767px) {
-    p {
-      font-size: 13px;
-      line-height: 16px;
-    }
   }
   @media (min-width: 1199px) {
-    p {
-      font-size: 18px;
-      line-height: 20px;
-    }
   }
   @media (min-width: 1599px) {
-    p {
-      font-size: 20px;
-      line-height: 19px;
-    }
   }
 `
 
@@ -54,19 +39,19 @@ const Klienci = () => (
           margin={" 0 0 20px 0"}
           text={"Klienci indywidualni"}
         ></StyledH3>
-        <p>
-          Kancelaria Adwokacka świadczy szybką i wszechstronną pomoc prawną
+        <StyledText
+          text={`Kancelaria Adwokacka świadczy szybką i wszechstronną pomoc prawną
           osobom fizycznym w rozwiązywaniu ich spraw prywatnych. W ramach
           kompleksowej obsługi prawnej: udzielamy porad prawnych i konsultacji,
           sporządzamy opinie prawne, opracowujemy i weryfikujemy umowy, pisma,
           regulaminy, reprezentujemy klientów przed wszystkimi urzędami i
-          sądami, w tym przed Sądem Najwyższym.
-        </p>
+          sądami, w tym przed Sądem Najwyższym.`}
+        ></StyledText>
       </Section>
       <Section>
         <StyledH3 margin={" 0 0 20px 0"} text={"Przedsiębiorstwa"}></StyledH3>
-        <p>
-          W ramach usług świadczenia usług podmiotom gospodarczym oraz
+        <StyledText
+          text={`W ramach usług świadczenia usług podmiotom gospodarczym oraz
           instytucjom Kancelaria oferuje: doradztwo prawne, reprezentację przed
           sądami oraz organami administracji, przygotowanie, analizę, negocjacje
           zawieranych umów, udział w posiedzeniach organów spółek, windykacje
@@ -74,8 +59,8 @@ const Klienci = () => (
           opracowanie regulaminów wewnątrzzakładowych, także w przypadku
           instytucji np. zakładów poprawczych, schronisk dla nieletnich.
           Powyższe usługi mogą być świadczone także w ramach pakietów
-          abonamentowych, dostosowanych do potrzeb Klienta.
-        </p>
+          abonamentowych, dostosowanych do potrzeb Klienta`}
+        ></StyledText>
       </Section>
     </PageContainer>
   </Layout>

@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
       color: white;
       margin-right: 10px;
     }
-    h4 {
+    h5 {
       font-size: 14px;
     }
     p {
@@ -57,7 +57,7 @@ const Layout = ({ children }) => {
     }
 
     @media (min-width: 410px) {
-      h4 {
+      h5 {
         font-size: 15px;
       }
       p {
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
     }
     @media (min-width: 767px) {
       width: 40%;
-      h4 {
+      h5 {
         font-size: 16px;
       }
       p {
@@ -76,7 +76,7 @@ const Layout = ({ children }) => {
       }
     }
     @media (min-width: 1199px) {
-      h4 {
+      h5 {
         font-size: 18px;
       }
       p {
@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
       }
     }
     @media (min-width: 1599px) {
-      h4 {
+      h5 {
         font-size: 20px;
       }
       p {
@@ -115,7 +115,7 @@ const Layout = ({ children }) => {
       <Footer>
         <StyledAdrressContainer>
           <StyledAdrress>
-            <h4>Dane kontaktowe</h4>
+            <h5>Dane kontaktowe</h5>
             <br />
             <p>
               Adwokat Katarzyna Bartoszewicz Kancelaria Adwokacka
@@ -128,7 +128,7 @@ const Layout = ({ children }) => {
             </p>
           </StyledAdrress>
           <StyledAdrress>
-            <h4>Kontakt</h4>
+            <h5>Kontakt</h5>
             <br />
             <p>
               <FaPhone className="adrress-icon" />

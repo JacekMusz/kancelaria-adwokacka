@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import ArticleContainer from "../components/Elements/article"
 import Button from "./../components/Elements/button"
 import StyledH3 from "../components/Elements/styledH3"
+import StyledText from "../components/Elements/styledText"
 
 const StyledImage = styled(Image)`
   object-fit: cover;
@@ -20,8 +21,8 @@ const TitlesContainer = styled.div`
   color: #cdbba5;
   position: absolute;
   top: 55vh;
-  width: 80%;
-  padding: 0% 15% 0 5%;
+  width: 90%;
+  padding: 0% 5% 0 5%;
   z-index: 12;
   font-size: "Cinzel";
   letter-spacing: 2px;
@@ -35,7 +36,7 @@ const TitlesContainer = styled.div`
     text-align: left;
     border-bottom: 1px solid #cdbba5;
   }
-  h3 {
+  h2 {
     margin-top: 10px;
     font-size: 30px;
   }
@@ -44,7 +45,7 @@ const TitlesContainer = styled.div`
     h1 {
       font-size: 50px;
     }
-    h3 {
+    h2 {
       font-size: 32px;
     }
   }
@@ -53,7 +54,7 @@ const TitlesContainer = styled.div`
       font-size: 54px;
       max-width: 350px;
     }
-    h3 {
+    h2 {
       font-size: 35px;
     }
   }
@@ -62,7 +63,7 @@ const TitlesContainer = styled.div`
       font-size: 60px;
       max-width: 400px;
     }
-    h3 {
+    h2 {
       font-size: 40px;
     }
   }
@@ -71,7 +72,7 @@ const TitlesContainer = styled.div`
       font-size: 65px;
       max-width: 700px;
     }
-    h3 {
+    h2 {
       font-size: 40px;
     }
   }
@@ -87,24 +88,29 @@ const SectionsContainer = styled.div`
 `
 const Section = styled.section`
   min-height: 30vh;
-  width: 90vw;
+  width: 100%;
   background-color: rgb(245, 245, 240);
   color: #171a1c;
-  padding: 10%;
+  padding: 5%;
   display: flex;
+  flex-direction: column;
 
-  h3 {
-    width: 100%;
+  h2 {
+    width: 90%;
     font-size: 35px;
     color: #171a1c;
     border-bottom: 1px solid #cdbba5;
+    margin-bottom: 20px;
+  }
+
+  .description-container {
+    border-left: 1px solid #cdbba5;
+    padding-left: 10px;
   }
   .description-container,
   .articles-container {
-    width: 60%;
-    border-left: 1px solid #cdbba5;
-    margin-left: 10%;
-    padding: 20px 20px 20px 50px;
+    width: 85%;
+
     font-size: 20px;
     line-height: 30px;
   }
@@ -116,7 +122,7 @@ const Section = styled.section`
 
   .show-more-articles-button {
     justify-self: flex-end;
-    align-self: flex-end;
+    align-self: center;
   }
 `
 
@@ -163,18 +169,21 @@ const IndexPage = props => {
         objectPosition="100% 0%"
       ></StyledImage>
       <TitlesContainer>
-        <h3>Adwokat</h3>
+        <h2>Adwokat</h2>
         <h1>Katarzyna Bartoszewicz</h1>
       </TitlesContainer>
       <SectionsContainer>
         <Section>
-          <div>
-            <StyledH3 text={"O koncelarii"}></StyledH3>
+          <div className="title-container">
+            <StyledH3
+              width={"90%"}
+              margin={"5%"}
+              text={"O koncelarii"}
+            ></StyledH3>
           </div>
           <div className="description-container">
-            <p>
-              {" "}
-              Świadczymy pomoc prawną podmiotom fizycznym, gospodarczym oraz
+            <StyledText
+              text={`Świadczymy pomoc prawną podmiotom fizycznym, gospodarczym oraz
               instytucjom. Adwokat Katarzyna Pałuba – prowadząca Kancelarię
               zdobywała swoje doświadczenie zawodowe współpracując z innymi
               kancelariami oraz instytucjami publicznymi. Obecnie od 2011 r.
@@ -183,14 +192,12 @@ const IndexPage = props => {
               gospodarcze oraz prawo pracy, Kancelaria współpracuje także ze
               specjalistami zajmującymi się m.in. prawem spółek, prawem
               kolejowym oraz zamówieniami publicznymi. Ponadto Kancelaria
-              współpracuje z Kancelariami Notarialnymi oraz Komorniczymi.
-            </p>
+              współpracuje z Kancelariami Notarialnymi oraz Komorniczymi.`}
+            ></StyledText>
           </div>
         </Section>
         <Section id="news">
-          <div>
-            <StyledH3 text={"Aktualności"}></StyledH3>
-          </div>
+          <StyledH3 width={"90%"} margin={"5%"} text={"Aktualności"}></StyledH3>
           <div className="articles-container">
             {articlesData.map((item, number) => {
               return (

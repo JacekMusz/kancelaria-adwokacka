@@ -1,17 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 
-const H3 = styled.h3`
-  font-size: 35px;
-  padding-bottom: 5px;
+const Text = styled.p`
+  font-size: 20px;
   color: ${({ color }) => (color ? color : "#171a1c")};
-  border-bottom: ${({ borderBottom }) =>
-    borderBottom ? borderBottom : "1px solid #cdbba5"};
   width: ${({ width }) => (width ? width : "auto")};
   margin: ${({ margin }) => (margin ? margin : "auto")};
 
   @media (min-width: 360px) {
-    font-size: 38px;
+    font-size: 18px;
   }
   @media (min-width: 410px) {
     font-size: 40px;
@@ -27,17 +24,17 @@ const H3 = styled.h3`
   }
 `
 
-const StyledH3 = props => {
+const StyledText = props => {
   return (
-    <H3
+    <Text
       width={props.width}
       margin={props.margin}
       borderBottom={props.borderBottom}
       color={props.color}
     >
       {props.text}
-    </H3>
+    </Text>
   )
 }
 
-export default StyledH3
+export default StyledText

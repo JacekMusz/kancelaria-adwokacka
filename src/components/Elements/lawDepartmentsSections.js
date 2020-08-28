@@ -3,16 +3,15 @@ import styled from "styled-components"
 
 const LawDepartment = styled.section`
   width: 90%;
-  margin-left: 5%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   color: #171a1c;
   border-radius: 3px;
   transition: 0.3s;
-  margin-bottom: 40px;
   position: relative;
   border-radius: 5px;
+  margin: 0 5% 5% 5%;
   background-color: ${({ showText }) =>
     showText ? "rgba(0, 0, 0, 0.03)" : null};
   .law-department__title {
