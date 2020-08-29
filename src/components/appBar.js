@@ -2,9 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import styled from "styled-components"
-import NavigationHorizontal from "./Navigations/navigationDesktop"
+import NavigationDesktop from "./Navigations/navigationDesktop"
 import { FaBars, FaTimes } from "react-icons/fa"
-import NavigationVertical from "./Navigations/navigationMobile"
+import NavigationMobile from "./Navigations/navigationMobile"
 
 const TopBar = styled.div`
   display: flex;
@@ -78,13 +78,13 @@ const AppBar = ({ siteTitle }) => {
           />
         )}
 
-        <NavigationVertical
+        <NavigationMobile
           openVerticalMenu={openVerticalMenu}
           setOpenVerticalMenu={setOpenVerticalMenu}
         />
       </div>
       <div className="navigation_desktop-version">
-        <NavigationHorizontal />
+        <NavigationDesktop />
       </div>
     </TopBar>
   )

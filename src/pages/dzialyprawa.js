@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
-import LawDepartmentsSections from "./../components/Elements/lawDepartmentsSections"
+import ListElement from "./../components/Elements/ListElement"
 import StyledH3 from "../components/Elements/styledH3"
 
 const PageContainer = styled.div`
@@ -14,7 +14,7 @@ const PageContainer = styled.div`
   align-items: "space-around";
   overflow: hidden;
 `
-const SectionsContainer = styled.div`
+const List = styled.div`
   min-height: 50vh;
   width: 90%;
   margin: 5%;
@@ -34,24 +34,24 @@ const Aktualnosci = () => (
         margin={"5%"}
         text={"Obszary naszej działalności "}
       />{" "}
-      <SectionsContainer>
-        {sections.map(item => {
+      <List>
+        {elements.map(item => {
           return (
-            <LawDepartmentsSections
+            <ListElement
               title={item.name}
               entryText={item.entryText}
               text={item.text}
             />
           )
         })}
-      </SectionsContainer>
+      </List>
     </PageContainer>
   </Layout>
 )
 
 export default Aktualnosci
 
-const sections = [
+const elements = [
   {
     name: "§ 1. Prawo cywilne i procedura Cywilna",
     entryText: "Ontrary to popular belief, Lorem Ipsum is not simply",

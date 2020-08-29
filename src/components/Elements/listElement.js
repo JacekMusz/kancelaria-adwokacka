@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 
-const LawDepartment = styled.section`
+const ListElementContainer = styled.section`
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ const LawDepartment = styled.section`
   margin: 0 5% 5% 5%;
   background-color: ${({ showText }) =>
     showText ? "rgba(0, 0, 0, 0.03)" : null};
-  .law-department__title {
+  .list-element__title {
     color: ${({ showText }) => (showText ? "#cdbba5" : "#171a1c")};
     border-radius: 5px 5px 0 0;
     display: block;
@@ -29,7 +29,7 @@ const LawDepartment = styled.section`
       padding-left: 50px;
     }
   }
-  .law-department__text {
+  .list-element__text {
     padding: 10px 20px;
     font-size: 15px;
     line-height: 22px;
@@ -54,27 +54,27 @@ const StyledButton = styled.button`
   }
 `
 
-const LawDepartmentsSections = ({ title, entryText, text }) => {
+const ListElement = ({ title, entryText, text }) => {
   const [showText, setShowText] = useState(false)
   const [titleHovered, setTitleHovered] = useState(false)
   return (
-    <LawDepartment showText={showText}>
+    <ListElementContainer showText={showText}>
       <h6
-        className="law-department__title"
+        className="list-element__title"
         onMouseOver={() => setTitleHovered(true)}
         onMouseLeave={() => setTitleHovered(false)}
         onClick={() => setShowText(true)}
       >
         {title}
       </h6>
-      {showText && <p className="law-department__text">{text}</p>}
+      {showText && <p className="list-element__text">{text}</p>}
       {showText && (
         <StyledButton onClick={() => setShowText(!showText)}>
           {"Schowaj"}
         </StyledButton>
       )}
-    </LawDepartment>
+    </ListElementContainer>
   )
 }
 
-export default LawDepartmentsSections
+export default ListElement

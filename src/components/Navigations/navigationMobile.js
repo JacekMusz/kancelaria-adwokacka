@@ -45,7 +45,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const NavigationVertical = props => {
+const NavigationMobile = props => {
   const handleScroll = () => {
     setTimeout(() => {
       scrollTo("#news")
@@ -79,4 +79,4 @@ const NavigationVertical = props => {
   )
 }
 
-export default NavigationVertical
+export default NavigationMobile

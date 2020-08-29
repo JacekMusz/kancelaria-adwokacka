@@ -15,7 +15,7 @@ const MainContainer = styled.div`
 const MainContent = styled.main`
   padding-top: 10vh;
   max-width: 100vw;
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(240, 240, 240);
   min-height: 100vh;
 `
 const Footer = styled.footer`

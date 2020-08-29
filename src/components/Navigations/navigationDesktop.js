@@ -46,7 +46,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const NavigationHorizontal = () => {
+const NavigationDesktop = () => {
   const handleScroll = () => {
     setTimeout(() => {
       scrollTo("#news")
@@ -83,4 +83,4 @@ const NavigationHorizontal = () => {
   )
 }
 
-export default NavigationHorizontal
+export default NavigationDesktop

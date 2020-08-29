@@ -32,18 +32,18 @@ const TitlesContainer = styled.div`
   h1 {
     margin-top: 10px;
     padding-bottom: 3px;
-    font-size: 46px;
+    font-size: 40px;
     text-align: left;
     border-bottom: 1px solid #cdbba5;
   }
   h2 {
     margin-top: 10px;
-    font-size: 30px;
+    font-size: 26px;
   }
 
   @media (min-width: 359px) {
     h1 {
-      font-size: 50px;
+      font-size: 46px;
     }
     h2 {
       font-size: 32px;
@@ -52,7 +52,6 @@ const TitlesContainer = styled.div`
   @media (min-width: 410px) {
     h1 {
       font-size: 54px;
-      max-width: 350px;
     }
     h2 {
       font-size: 35px;
@@ -60,8 +59,7 @@ const TitlesContainer = styled.div`
   }
   @media (min-width: 767px) {
     h1 {
-      font-size: 60px;
-      max-width: 400px;
+      font-size: 55px;
     }
     h2 {
       font-size: 40px;
@@ -88,10 +86,10 @@ const SectionsContainer = styled.div`
 `
 const Section = styled.section`
   min-height: 30vh;
-  width: 100%;
-  background-color: rgb(245, 245, 240);
+  width: 90%;
+
   color: #171a1c;
-  padding: 5%;
+  margin: 5%;
   display: flex;
   flex-direction: column;
 
@@ -103,21 +101,10 @@ const Section = styled.section`
     margin-bottom: 20px;
   }
 
-  .description-container {
-    border-left: 1px solid #cdbba5;
-    padding-left: 10px;
-  }
-  .description-container,
-  .articles-container {
-    width: 85%;
-
-    font-size: 20px;
-    line-height: 30px;
-  }
-
   .articles-container {
     display: flex;
     flex-direction: column;
+    width: 90%;
   }
 
   .show-more-articles-button {
@@ -176,14 +163,14 @@ const IndexPage = props => {
         <Section>
           <div className="title-container">
             <StyledH3
-              width={"90%"}
-              margin={"5%"}
+              width={"85%"}
+              margin={"5% 0"}
               text={"O koncelarii"}
             ></StyledH3>
           </div>
-          <div className="description-container">
-            <StyledText
-              text={`Świadczymy pomoc prawną podmiotom fizycznym, gospodarczym oraz
+
+          <StyledText
+            text={`Świadczymy pomoc prawną podmiotom fizycznym, gospodarczym oraz
               instytucjom. Adwokat Katarzyna Pałuba – prowadząca Kancelarię
               zdobywała swoje doświadczenie zawodowe współpracując z innymi
               kancelariami oraz instytucjami publicznymi. Obecnie od 2011 r.
@@ -193,11 +180,10 @@ const IndexPage = props => {
               specjalistami zajmującymi się m.in. prawem spółek, prawem
               kolejowym oraz zamówieniami publicznymi. Ponadto Kancelaria
               współpracuje z Kancelariami Notarialnymi oraz Komorniczymi.`}
-            ></StyledText>
-          </div>
+          ></StyledText>
         </Section>
         <Section id="news">
-          <StyledH3 width={"90%"} margin={"5%"} text={"Aktualności"}></StyledH3>
+          <StyledH3 width={"85%"} margin={"5%"} text={"Aktualności"}></StyledH3>
           <div className="articles-container">
             {articlesData.map((item, number) => {
               return (

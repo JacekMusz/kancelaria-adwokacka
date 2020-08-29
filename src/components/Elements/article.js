@@ -11,7 +11,7 @@ const Article = styled.article`
   overflow: hidden;
   position: relative;
   margin-bottom: 30px;
-  padding-left: 10px;
+  padding: 10px;
   transition: 0.3s;
   border-left: 1px solid #cdbba5;
   .article-date {
