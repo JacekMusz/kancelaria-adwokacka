@@ -15,7 +15,7 @@ const PageContainer = styled.div`
 
 const Section = styled.div`
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 
   @media (min-width: 360px) {
   }
@@ -35,10 +35,7 @@ const Klienci = () => (
     <SEO title="klienci" />
     <PageContainer>
       <Section>
-        <StyledH3
-          margin={" 0 0 20px 0"}
-          text={"Klienci indywidualni"}
-        ></StyledH3>
+        <StyledH3 margin={"5% 0"} text={"Klienci indywidualni"}></StyledH3>
         <StyledText
           text={`Kancelaria Adwokacka świadczy szybką i wszechstronną pomoc prawną
           osobom fizycznym w rozwiązywaniu ich spraw prywatnych. W ramach
@@ -49,7 +46,7 @@ const Klienci = () => (
         ></StyledText>
       </Section>
       <Section>
-        <StyledH3 margin={" 0 0 20px 0"} text={"Przedsiębiorstwa"}></StyledH3>
+        <StyledH3 margin={"5% 0"} text={"Przedsiębiorstwa"}></StyledH3>
         <StyledText
           text={`W ramach usług świadczenia usług podmiotom gospodarczym oraz
           instytucjom Kancelaria oferuje: doradztwo prawne, reprezentację przed

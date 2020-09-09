@@ -11,58 +11,74 @@ import StyledText from "../components/Elements/styledText"
 const StyledImage = styled(Image)`
   object-fit: cover;
   position: fixed;
-  height: 100vh;
+  height: calc(100vh - 50px);
   z-index: 0;
   top: 0;
   width: 100%;
+  @media (min-width: 359px) and (orientation: portrait) {
+    height: calc(100vh - 60px);
+  }
 `
 
 const TitlesContainer = styled.div`
   color: #cdbba5;
   position: absolute;
-  top: 55vh;
+  bottom: 0;
   width: 90%;
-  padding: 0% 5% 0 5%;
+  padding: 5% 5% 15% 5%;
   z-index: 12;
   font-size: "Cinzel";
   letter-spacing: 2px;
   background-color: red;
-  height: 55vh;
   background: linear-gradient(transparent, #171a1c);
   h1 {
     margin-top: 10px;
     padding-bottom: 3px;
     font-size: 40px;
     text-align: left;
-    border-bottom: 1px solid #cdbba5;
+
+    /* border-bottom: 1px solid #cdbba5; */
   }
   h2 {
     margin-top: 10px;
     font-size: 26px;
   }
 
-  @media (min-width: 359px) {
+  @media (min-width: 359px) and (orientation: portrait) {
+    padding: 5% 5% 15% 5%;
     h1 {
-      font-size: 46px;
+      font-size: 45px;
     }
     h2 {
-      font-size: 32px;
+      font-size: 28px;
     }
   }
-  @media (min-width: 410px) {
+  @media (min-width: 410px) and (orientation: portrait) {
+    padding: 5% 5% 20% 5%;
     h1 {
-      font-size: 54px;
+      font-size: 50px;
     }
     h2 {
-      font-size: 35px;
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 410px) and (orientation: landscape) {
+    padding: 5% 5% 10% 5%;
+    h1 {
+      font-size: 38px;
+    }
+    h2 {
+      font-size: 30px;
     }
   }
   @media (min-width: 767px) {
+    padding: 5% 5% 10% 5%;
     h1 {
-      font-size: 55px;
+      font-size: 48px;
     }
     h2 {
-      font-size: 40px;
+      font-size: 32px;
     }
   }
   @media (min-width: 1199px) {
@@ -87,9 +103,8 @@ const SectionsContainer = styled.div`
 const Section = styled.section`
   min-height: 30vh;
   width: 90%;
-
   color: #171a1c;
-  margin: 5%;
+  padding: 10% 5%;
   display: flex;
   flex-direction: column;
 
@@ -161,14 +176,11 @@ const IndexPage = props => {
       </TitlesContainer>
       <SectionsContainer>
         <Section>
-          <div className="title-container">
-            <StyledH3
-              width={"85%"}
-              margin={"5% 0"}
-              text={"O koncelarii"}
-            ></StyledH3>
-          </div>
-
+          <StyledH3
+            width={"85%"}
+            margin={"5% 0"}
+            text={"O koncelarii"}
+          ></StyledH3>
           <StyledText
             text={`Świadczymy pomoc prawną podmiotom fizycznym, gospodarczym oraz
               instytucjom. Adwokat Katarzyna Pałuba – prowadząca Kancelarię
@@ -183,7 +195,11 @@ const IndexPage = props => {
           ></StyledText>
         </Section>
         <Section id="news">
-          <StyledH3 width={"85%"} margin={"5%"} text={"Aktualności"}></StyledH3>
+          <StyledH3
+            width={"85%"}
+            margin={"5% 0"}
+            text={"Aktualności"}
+          ></StyledH3>
           <div className="articles-container">
             {articlesData.map((item, number) => {
               return (

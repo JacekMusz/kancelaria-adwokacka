@@ -9,7 +9,7 @@ import NavigationMobile from "./Navigations/navigationMobile"
 const TopBar = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 10vh;
+  height: 50px;
   background-color: #171a1c;
   margin: 0;
   border: none;
@@ -26,18 +26,23 @@ const TopBar = styled.div`
   .menu-icon {
     font-size: 30px;
     position: absolute;
-    top: 15px;
+    top: 10px;
     right: 15px;
   }
   h4 {
     font-size: 20px;
   }
+
   @media (min-width: 359px) {
     h4 {
       font-size: 22px;
     }
   }
-  @media (min-width: 410px) {
+  @media (min-width: 359px) and (orientation: portrait) {
+    height: 60px;
+    .menu-icon {
+      font-size: 40px;
+    }
     h4 {
       font-size: 25px;
     }

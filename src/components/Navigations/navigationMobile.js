@@ -5,18 +5,21 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 
 const NavigationWrapper = styled.nav`
   width: 100%;
-  height: 80vh;
-  margin-top: 10vh;
+  height: calc(100vh - 49px);
+  margin-top: 49px;
   top: 0;
-  padding: 5%;
+  padding: 0 5% 10% 5%;
   background-color: #171a1c;
   position: absolute;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   display: ${({ openVerticalMenu }) => (openVerticalMenu ? "flex" : "none")};
+  @media (min-width: 410px) and (position: portrait) {
+    margin-top: 59px;
+    height: calc(100vh - 59px);
+  }
 `
 const LinkWrapper = styled.div`
-  height: 10vh;
   display: flex;
   align-items: center;
   transition: 0.3s;
@@ -25,22 +28,21 @@ const LinkWrapper = styled.div`
 const StyledLink = styled(Link)`
   color: #cdbba5;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 40px;
-  margin-bottom: 5px;
   width: 100%;
   text-align: center;
 
   @media (min-width: 359px) {
-    font-size: 32px;
+    font-size: 26;
     line-height: 45px;
   }
-  @media (min-width: 410px) {
-    font-size: 35px;
+  @media (min-width: 410px) and (position: portrait) {
+    font-size: 28px;
     line-height: 48px;
   }
   @media (min-width: 767px) {
-    font-size: 38px;
+    font-size: 28px;
     line-height: 50px;
   }
 `

@@ -7,7 +7,8 @@ import StyledH3 from "../components/Elements/styledH3"
 
 const PageContainer = styled.div`
   min-height: 100vh;
-  width: 100%;
+  width: 90%;
+  padding: 5%;
   display: flex;
   flex-direction: column;
   justify-content: "space-between";
@@ -16,24 +17,19 @@ const PageContainer = styled.div`
 `
 const List = styled.div`
   min-height: 50vh;
-  width: 90%;
-  margin: 5%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: "space-between";
   align-items: "space-around";
-  border-left: 1px solid #cdbba5;
+  /* border-left: 1px solid #cdbba5; */
 `
 
 const Aktualnosci = () => (
   <Layout>
     <SEO title="dzialy-prawa" />
     <PageContainer>
-      <StyledH3
-        width={"90%"}
-        margin={"5%"}
-        text={"Obszary naszej działalności "}
-      />{" "}
+      <StyledH3 width={"100%"} margin={"5% 0"} text={"Działy prawa "} />{" "}
       <List>
         {elements.map(item => {
           return (

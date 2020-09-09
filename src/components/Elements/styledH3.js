@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const H3 = styled.h3`
-  font-size: 30px;
+  font-size: 28px;
   padding-bottom: 5px;
   font-weight: 500;
   color: ${({ color }) => (color ? color : "#171a1c")};
@@ -12,10 +12,10 @@ const H3 = styled.h3`
   margin: ${({ margin }) => (margin ? margin : "5%")};
 
   @media (min-width: 360px) {
-    font-size: 32px;
+    font-size: 30px;
   }
   @media (min-width: 410px) {
-    font-size: 34px;
+    font-size: 32px;
   }
   @media (min-width: 767px) {
     font-size: 35px;

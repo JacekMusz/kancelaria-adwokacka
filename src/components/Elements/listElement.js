@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 const ListElementContainer = styled.section`
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -11,7 +11,7 @@ const ListElementContainer = styled.section`
   transition: 0.3s;
   position: relative;
   border-radius: 5px;
-  margin: 0 5% 5% 5%;
+  margin: 3% 5% 3% 0;
   background-color: ${({ showText }) =>
     showText ? "rgba(0, 0, 0, 0.03)" : null};
   .list-element__title {
@@ -24,16 +24,15 @@ const ListElementContainer = styled.section`
     background-color: ${({ showText }) => (showText ? "#171a1c" : null)};
     cursor: ${({ showText }) => (showText ? null : "pointer")};
     transition: 0.4s;
-    padding-left: ${({ showText }) => (showText ? "50px" : "20px")};
+    padding-left: ${({ showText }) => (showText ? "30px" : "10px")};
     &:hover {
-      padding-left: 50px;
+      padding-left: 30px;
     }
   }
   .list-element__text {
-    padding: 10px 20px;
     font-size: 15px;
     line-height: 22px;
-    margin: 10px;
+    padding: 10px;
   }
 `
 const StyledButton = styled.button`

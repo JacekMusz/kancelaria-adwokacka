@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Text = styled.p`
-  font-size: 20px;
+  font-size: 17px;
   line-height: 26px;
   color: ${({ color }) => (color ? color : "#171a1c")};
   width: ${({ width }) => (width ? width : "auto")};

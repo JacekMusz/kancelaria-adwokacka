@@ -8,31 +8,42 @@ import StyledText from "../components/Elements/styledText"
 
 const List = styled.div`
   min-height: 50vh;
-  width: 90%;
-  margin: 5%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: "space-between";
-  align-items: "space-around";
-  border-left: 1px solid #cdbba5;
+
+  /* border-left: 1px solid #cdbba5; */
+`
+const Section = styled.div`
+  width: 90%;
+  padding: 5% 5% 15% 5%;
 `
 
 const Kontakt = () => (
   <Layout>
-    <StyledH3 margin={"20px"} text={"Zachęcamy do kontaktu"}></StyledH3>
-    <StyledText text="abrakadabra"></StyledText>
-    <StyledH3 margin={"20px"} text={"Najczęstsze pytania"}></StyledH3>
-    <List>
-      {elements.map(item => {
-        return (
-          <ListElement
-            title={item.name}
-            entryText={item.entryText}
-            text={item.text}
-          />
-        )
-      })}
-    </List>
+    <Section>
+      <StyledH3 margin={"5% 0"} text={"Zapraszamy do kontaktu"}></StyledH3>
+      <StyledText text="Nasza kancelaria znajduje się w centrum Żyrardowa - ul. 1 Maja 54 (plac Jana Pawła II)" />
+      <br />
+      <StyledText text="Zachęcamy do kontaktu telefonicznego " />
+      <StyledText text="+48 533 270 008" />
+      <br />
+      <StyledText text="Lub napisz do nas:" />
+      <StyledText text="bartoszewicz@zyrardow-adwokat.pl" />
+      <StyledH3 margin={"15% 0 5% 0"} text={"Najczęstsze pytania"}></StyledH3>
+      <List>
+        {elements.map(item => {
+          return (
+            <ListElement
+              title={item.name}
+              entryText={item.entryText}
+              text={item.text}
+            />
+          )
+        })}
+      </List>
+    </Section>
   </Layout>
 )
 

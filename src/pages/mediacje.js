@@ -15,18 +15,7 @@ const PageContainer = styled.div`
 
 const Section = styled.div`
   width: 100%;
-  margin-bottom: 20px;
-  @media (min-width: 360px) {
-  }
-
-  @media (min-width: 410px) {
-  }
-  @media (min-width: 767px) {
-  }
-  @media (min-width: 1199px) {
-  }
-  @media (min-width: 1599px) {
-  }
+  margin-bottom: 50px;
 `
 
 const Aktualnosci = () => (
@@ -34,7 +23,7 @@ const Aktualnosci = () => (
     <SEO title="mediacje" />
     <PageContainer>
       <Section>
-        <StyledH3 margin={" 0 0 20px 0"} text={"Mediacje"}></StyledH3>
+        <StyledH3 margin={"5% 0 "} text={"Mediacje"}></StyledH3>
         <StyledText
           text={` Kancelaria prowadzi również spotkania mediacyjne. Adwokat Katarzyna
           Bartoszewicz jest wpisana na listę stałych mediatorów sądowych przy

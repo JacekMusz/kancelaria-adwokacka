@@ -13,10 +13,13 @@ const MainContainer = styled.div`
 `
 
 const MainContent = styled.main`
-  padding-top: 10vh;
+  padding-top: 50px;
   max-width: 100vw;
   background-color: rgb(240, 240, 240);
   min-height: 100vh;
+  @media (min-width: 359px) and (orientation: portrait) {
+    padding-top: 60px;
+  }
 `
 const Footer = styled.footer`
   background-color: #171a1c;
@@ -35,38 +38,43 @@ const Layout = ({ children }) => {
   const StyledAdrress = styled.address`
     display: flex;
     flex-direction: column;
-    width: 48%;
+    width: 90%;
     color: white;
-    justify-content: center;
+    margin: 0 5% 5% 5%;
+    justify-content: "flex-start";
     align-content: center;
+    font-size: 16px;
+    line-height: 20px;
     .adrress-icon {
       color: white;
       margin-right: 10px;
     }
     h5 {
-      font-size: 14px;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
     p {
       font-size: 12px;
       color: #ddd;
       line-height: 16px;
+      letter-spacing: 1.5px;
     }
 
     @media (min-width: 360px) {
-      width: 45%;
+      h5 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
 
     @media (min-width: 410px) {
-      h5 {
-        font-size: 15px;
-      }
-      p {
-        font-size: 12px;
-        line-height: 15px;
-      }
     }
     @media (min-width: 767px) {
       width: 40%;
+
       h5 {
         font-size: 16px;
       }
@@ -103,9 +111,12 @@ const Layout = ({ children }) => {
   `
   const StyledAdrressContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     padding: 20px 0;
+    @media (min-width: 767px) {
+      flex-direction: row;
+    }
   `
 
   return (
@@ -115,10 +126,9 @@ const Layout = ({ children }) => {
       <Footer>
         <StyledAdrressContainer>
           <StyledAdrress>
-            <h5>Dane kontaktowe</h5>
-            <br />
+            <h5>Adres Kancelarii</h5>
             <p>
-              Adwokat Katarzyna Bartoszewicz Kancelaria Adwokacka
+              Adwokat Katarzyna Bartoszewicz
               <br />
               ul. 1 Maja 54, 96-300 Żyrardów
               <br />
@@ -129,11 +139,9 @@ const Layout = ({ children }) => {
           </StyledAdrress>
           <StyledAdrress>
             <h5>Kontakt</h5>
-            <br />
             <p>
               <FaPhone className="adrress-icon" />
               +48 533 270 008
-              <br />
               <br />
               <FiMail className="adrress-icon" />
               bartoszewicz@zyrardow-adwokat.pl
