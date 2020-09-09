@@ -16,6 +16,11 @@ const PageContainer = styled.div`
 const Section = styled.div`
   width: 100%;
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 1023px) {
+    flex-direction: row;
+  }
 `
 
 const Aktualnosci = () => (

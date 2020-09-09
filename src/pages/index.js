@@ -83,8 +83,7 @@ const TitlesContainer = styled.div`
   }
   @media (min-width: 1199px) {
     h1 {
-      font-size: 65px;
-      max-width: 700px;
+      font-size: 62px;
     }
     h2 {
       font-size: 40px;
@@ -104,10 +103,12 @@ const Section = styled.section`
   min-height: 30vh;
   width: 90%;
   color: #171a1c;
-  padding: 10% 5%;
+  padding: 5%;
   display: flex;
   flex-direction: column;
-
+  @media (min-width: 1023px) {
+    flex-direction: row;
+  }
   h2 {
     width: 90%;
     font-size: 35px;
@@ -176,11 +177,7 @@ const IndexPage = props => {
       </TitlesContainer>
       <SectionsContainer>
         <Section>
-          <StyledH3
-            width={"85%"}
-            margin={"5% 0"}
-            text={"O koncelarii"}
-          ></StyledH3>
+          <StyledH3 margin={"5% 0"} text={"O koncelarii"}></StyledH3>
           <StyledText
             text={`Świadczymy pomoc prawną podmiotom fizycznym, gospodarczym oraz
               instytucjom. Adwokat Katarzyna Pałuba – prowadząca Kancelarię
@@ -194,12 +191,8 @@ const IndexPage = props => {
               współpracuje z Kancelariami Notarialnymi oraz Komorniczymi.`}
           ></StyledText>
         </Section>
-        <Section id="news">
-          <StyledH3
-            width={"85%"}
-            margin={"5% 0"}
-            text={"Aktualności"}
-          ></StyledH3>
+        <Section className="section-news" id="news">
+          <StyledH3 margin={"5% 0"} text={"Aktualności"}></StyledH3>
           <div className="articles-container">
             {articlesData.map((item, number) => {
               return (

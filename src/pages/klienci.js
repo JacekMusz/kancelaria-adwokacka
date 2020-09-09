@@ -16,7 +16,8 @@ const PageContainer = styled.div`
 const Section = styled.div`
   width: 100%;
   margin-bottom: 50px;
-
+  display: flex;
+  flex-direction: column;
   @media (min-width: 360px) {
   }
 
@@ -24,7 +25,8 @@ const Section = styled.div`
   }
   @media (min-width: 767px) {
   }
-  @media (min-width: 1199px) {
+  @media (min-width: 1023px) {
+    flex-direction: row;
   }
   @media (min-width: 1599px) {
   }

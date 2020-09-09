@@ -11,7 +11,7 @@ const ListElementContainer = styled.section`
   transition: 0.3s;
   position: relative;
   border-radius: 5px;
-  margin: 3% 5% 3% 0;
+  margin: 0 0 3% 0;
   background-color: ${({ showText }) =>
     showText ? "rgba(0, 0, 0, 0.03)" : null};
   .list-element__title {

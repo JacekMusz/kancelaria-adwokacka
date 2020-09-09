@@ -6,22 +6,22 @@ import ListElement from "./../components/Elements/ListElement"
 import StyledH3 from "../components/Elements/styledH3"
 
 const PageContainer = styled.div`
-  min-height: 100vh;
   width: 90%;
   padding: 5%;
   display: flex;
   flex-direction: column;
-  justify-content: "space-between";
-  align-items: "space-around";
   overflow: hidden;
+  @media (min-width: 1023px) {
+    flex-direction: row;
+  }
 `
 const List = styled.div`
-  min-height: 50vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: "space-between";
-  align-items: "space-around";
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 80%;
   /* border-left: 1px solid #cdbba5; */
 `
 
@@ -29,7 +29,7 @@ const Aktualnosci = () => (
   <Layout>
     <SEO title="dzialy-prawa" />
     <PageContainer>
-      <StyledH3 width={"100%"} margin={"5% 0"} text={"Działy prawa "} />{" "}
+      <StyledH3 margin={"5% 0"} text={"Działy prawa "} />
       <List>
         {elements.map(item => {
           return (

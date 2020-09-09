@@ -16,7 +16,6 @@ const MainContent = styled.main`
   padding-top: 50px;
   max-width: 100vw;
   background-color: rgb(240, 240, 240);
-  min-height: 100vh;
   @media (min-width: 359px) and (orientation: portrait) {
     padding-top: 60px;
   }
