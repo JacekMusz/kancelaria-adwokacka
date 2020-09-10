@@ -16,11 +16,13 @@ const List = styled.div`
 `
 const Section = styled.div`
   width: 90%;
-  padding: 5% 5% 5% 5%;
+  padding: 5%;
   display: flex;
   flex-direction: column;
   @media (min-width: 1023px) {
     flex-direction: row;
+    max-width: 1200px;
+    margin: auto;
   }
 `
 
@@ -35,7 +37,7 @@ const Kontakt = () => (
       <StyledH3 margin={"5% 0"} text={"Zapraszamy do kontaktu"}></StyledH3>
       <TextsContainer>
         <StyledText
-          margin={"0 0 5% 0"}
+          margin={"0 0 40px 0"}
           text="Nasza kancelaria znajduje się w centrum Żyrardowa - ul. 1 Maja 54 (plac Jana Pawła II)"
         />
         <StyledText margin={"0"} text="Zachęcamy do kontaktu telefonicznego " />

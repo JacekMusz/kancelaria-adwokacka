@@ -18,21 +18,19 @@ const H3 = styled.h3`
     font-size: 31px;
   }
   @media (min-width: 767px) {
-    font-size: 32px;
   }
   @media (min-width: 1023px) {
-    font-size: 34px;
-    width: 30%;
-  }
-  @media (min-width: 1199px) {
-    border-bottom: none;
+    font-size: 32px;
+    padding-right: 10px;
     border-right: 1px solid #cdbba5;
-    font-size: 36px;
+    border-bottom: none;
     margin: 0 20px 0 0;
     width: 30%;
   }
-  @media (min-width: 1599px) {
-    font-size: 40px;
+  @media (min-width: 1199px) {
+    font-size: 34px;
+    margin: 0 20px 0 0;
+    width: 30%;
   }
 `
 

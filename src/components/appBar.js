@@ -10,6 +10,7 @@ const TopBar = styled.div`
   display: flex;
   justify-content: space-between;
   height: 50px;
+
   background-color: #171a1c;
   margin: 0;
   border: none;
@@ -40,6 +41,7 @@ const TopBar = styled.div`
   }
   @media (min-width: 359px) and (orientation: portrait) {
     height: 60px;
+
     .menu-icon {
       font-size: 40px;
     }

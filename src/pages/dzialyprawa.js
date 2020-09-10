@@ -13,6 +13,8 @@ const PageContainer = styled.div`
   overflow: hidden;
   @media (min-width: 1023px) {
     flex-direction: row;
+    max-width: 1200px;
+    margin: auto;
   }
 `
 const List = styled.div`

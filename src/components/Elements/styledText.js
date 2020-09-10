@@ -2,26 +2,33 @@ import React from "react"
 import styled from "styled-components"
 
 const Text = styled.p`
-  font-size: 17px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 24px;
   color: ${({ color }) => (color ? color : "#171a1c")};
   width: ${({ width }) => (width ? width : "auto")};
   margin: ${({ margin }) => (margin ? margin : "auto")};
 
   @media (min-width: 360px) {
-    font-size: 18px;
+    font-size: 15px;
+    line-height: 24px;
   }
   @media (min-width: 410px) {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
   @media (min-width: 767px) {
-    font-size: 21px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+  @media (min-width: 1023px) {
+    font-size: 19px;
+    line-height: 26px;
+    margin: ${({ margin }) => (margin ? margin : "0")};
   }
   @media (min-width: 1199px) {
-    font-size: 22px;
-  }
-  @media (min-width: 1599px) {
-    font-size: 38px;
+    font-size: 20px;
+    line-height: 28px;
+    margin: ${({ margin }) => (margin ? margin : "0")};
   }
 `
 

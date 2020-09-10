@@ -92,11 +92,13 @@ const TitlesContainer = styled.div`
 `
 
 const SectionsContainer = styled.div`
-  width: 100%;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  color: white;
   overflow: hidden;
 `
 const Section = styled.section`

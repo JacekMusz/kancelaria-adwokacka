@@ -11,6 +11,10 @@ const PageContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   padding: 5%;
+  @media (min-width: 1023px) {
+    max-width: 1200px;
+    margin: auto;
+  }
 `
 
 const Section = styled.div`
@@ -20,6 +24,7 @@ const Section = styled.div`
   flex-direction: column;
   @media (min-width: 1023px) {
     flex-direction: row;
+    justify-content: flex-start;
   }
 `
 

@@ -6,18 +6,22 @@ import styled from "styled-components"
 import StyledText from "../components/Elements/styledText"
 
 const PageContainer = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
+  padding: 5% 5% 0 5%;
   flex-direction: column;
   justify-content: space-around;
-  padding: 5%;
+  @media (min-width: 1023px) {
+    max-width: 1200px;
+    margin: auto;
+  }
 `
 
 const Section = styled.div`
   width: 100%;
-  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 10%;
   @media (min-width: 360px) {
   }
 

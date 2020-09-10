@@ -10,11 +10,16 @@ import { FiMail } from "react-icons/fi"
 const MainContainer = styled.div`
   width: 100%;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const MainContent = styled.main`
   padding-top: 50px;
   max-width: 100vw;
+
   background-color: rgb(240, 240, 240);
   @media (min-width: 359px) and (orientation: portrait) {
     padding-top: 60px;

@@ -36,6 +36,20 @@ const Article = styled.article`
     background-color: rgba(0, 0, 0, 0.03);
     transform: scale(1.015);
   }
+  @media (min-width: 360px) {
+  }
+  @media (min-width: 410px) {
+  }
+  @media (min-width: 767px) {
+  }
+  @media (min-width: 1023px) {
+    border-left: none;
+    border-right: 1px solid #cdbba5;
+  }
+  @media (min-width: 1199px) {
+  }
+  @media (min-width: 1599px) {
+  }
 `
 const StyledButton = styled.button`
   min-width: 150px;
