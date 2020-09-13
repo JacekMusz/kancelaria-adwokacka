@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
-import ListElement from "./../components/Elements/ListElement"
+import ListElement from "./../components/Elements/listElement"
 import StyledH3 from "../components/Elements/styledH3"
 
 const PageContainer = styled.div`
