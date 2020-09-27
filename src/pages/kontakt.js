@@ -75,7 +75,7 @@ const elements = [
   {
     name: "§ 2. Jakie dokumenty przygotować do sprawy rozwodowej?",
     entryText: "Ontrary to popular belief, Lorem Ipsum is not simply",
-    text: `na początek: zupełny odpis aktu małżeństwa, odpis aktu urodzenia dziecka/dzieci, jeśli alimenty są sporne, dokumenty jak do sprawy o alimenty`,
+    text: `Zupełny odpis aktu małżeństwa, odpis aktu urodzenia dziecka/dzieci, jeśli alimenty są sporne, dokumenty jak do sprawy o alimenty.`,
   },
   {
     name: "§ 3. Czy w sprawie rozwodowej trzeba przesłuchać świadka?",
@@ -88,6 +88,6 @@ const elements = [
       "§ 4. Czy w sprawie dotyczącej kontaktów, miejsca zamieszkania dzieci lub rozwodu, dzieci są przesłuchiwane? ",
     entryText: "Ontrary to popular belief, Lorem Ipsum is not simply",
     text:
-      "Najczęściej nie. W przypadku sporu w zakresie dotyczącym dzieci, rodzice i małoletni są badani przez biegłych psychologów w OZSS. Po badaniu jest sporządzana opinia, która jest jednym z dowodów uwzględnianym przez sąd przy wydawaniu rozstrzygnięcia. Jednakże, wyjątkowo, jeśli sąd uzna, ze pomimo opinii konieczne jest wysłuchanie małoletnich, to może to zrobić.    ",
+      "Najczęściej nie. W przypadku sporu w zakresie dotyczącym dzieci, rodzice i małoletni są badani przez biegłych psychologów w OZSS. Po badaniu jest sporządzana opinia, która jest jednym z dowodów uwzględnianym przez sąd przy wydawaniu rozstrzygnięcia. Jednakże, wyjątkowo, jeśli sąd uzna, że pomimo opinii konieczne jest wysłuchanie małoletnich, to może to zrobić.",
   },
 ]

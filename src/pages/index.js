@@ -181,16 +181,15 @@ const IndexPage = props => {
         <Section>
           <StyledH3 margin={"5% 0"} text={"O koncelarii"}></StyledH3>
           <StyledText
-            text={`Świadczymy pomoc prawną podmiotom fizycznym, gospodarczym oraz
-              instytucjom. Adwokat Katarzyna Pałuba – prowadząca Kancelarię
-              zdobywała swoje doświadczenie zawodowe współpracując z innymi
-              kancelariami oraz instytucjami publicznymi. Obecnie od 2011 r.
-              prowadzi własną praktykę prawniczą. W ramach swojego szerokiego
-              zakresu działalności, obejmującego prawo karne, cywilne, rodzinne,
-              gospodarcze oraz prawo pracy, Kancelaria współpracuje także ze
-              specjalistami zajmującymi się m.in. prawem spółek, prawem
-              kolejowym oraz zamówieniami publicznymi. Ponadto Kancelaria
-              współpracuje z Kancelariami Notarialnymi oraz Komorniczymi.`}
+            text={`Kancelaria świadczy pomoc prawną podmiotom fizycznym,
+            gospodarczym oraz instytucjom. Adwokat Katarzyna
+            Bartoszewicz zdobywała swoje doświadczenie zawodowe
+            współpracując z innymi kancelariami oraz instytucjami
+            publicznymi. Obecnie od 2011 r. prowadzi własną praktykę
+            prawniczą. Szerokiego zakres usług obejmuje prawo karne,
+            cywilne, rodzinne, gospodarcze, prawo pracy oraz prawo
+            spółek. Kancelaria ponadto współpracuje z Kancelariami
+            Notarialnymi oraz Komorniczymi.`}
           ></StyledText>
         </Section>
         <Section className="section-news" id="news">

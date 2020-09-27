@@ -52,17 +52,13 @@ const Klienci = () => (
         ></StyledText>
       </Section>
       <Section>
-        <StyledH3 margin={"5% 0"} text={"Przedsiębiorstwa"}></StyledH3>
+        <StyledH3
+          margin={"5% 0"}
+          text={"Przedsiębiorstwa i Instytucje"}
+        ></StyledH3>
         <StyledText
-          text={`W ramach usług świadczenia usług podmiotom gospodarczym oraz
-          instytucjom Kancelaria oferuje: doradztwo prawne, reprezentację przed
-          sądami oraz organami administracji, przygotowanie, analizę, negocjacje
-          zawieranych umów, udział w posiedzeniach organów spółek, windykacje
-          należności, rozwiązywanie problemów pracodawcy z zakresu prawa pracy,
-          opracowanie regulaminów wewnątrzzakładowych, także w przypadku
-          instytucji np. zakładów poprawczych, schronisk dla nieletnich.
-          Powyższe usługi mogą być świadczone także w ramach pakietów
-          abonamentowych, dostosowanych do potrzeb Klienta`}
+          text={`W ramach świadczenia usług podmiotom gospodarczym oraz instytucjom Kancelaria oferuje: doradztwo prawne, reprezentację przed sądami oraz organami administracji, przygotowanie, analizę, negocjacje zawieranych umów, windykacje należności, rozwiązywanie problemów pracodawcy z zakresu prawa pracy, opracowanie regulaminów wewnątrzzakładowych, także w przypadku
+          instytucji np. zakładów poprawczych, schronisk dla nieletnich. Powyższe usługi mogą być świadczone także w ramach pakietów abonamentowych, dostosowanych do potrzeb Klienta.`}
         ></StyledText>
       </Section>
     </PageContainer>
