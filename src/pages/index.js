@@ -11,7 +11,7 @@ import StyledText from "../components/Elements/styledText"
 const StyledImage = styled(Image)`
   object-fit: cover;
   position: fixed;
-  height: calc(100vh - 50px);
+  height: 100vh;
   z-index: 0;
   top: 0;
   width: 100%;
@@ -36,8 +36,6 @@ const TitlesContainer = styled.div`
     padding-bottom: 3px;
     font-size: 40px;
     text-align: left;
-
-    /* border-bottom: 1px solid #cdbba5; */
   }
   h2 {
     margin-top: 10px;

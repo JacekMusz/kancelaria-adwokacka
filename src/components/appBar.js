@@ -1,17 +1,30 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import NavigationDesktop from "./Navigations/navigationDesktop"
 import { FaBars, FaTimes } from "react-icons/fa"
 import NavigationMobile from "./Navigations/navigationMobile"
 
+const BackgroundColor = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #171a1c;
+  top: 0px;
+  transition: 0.3s;
+  transform: ${({ backgroundColorPosition }) =>
+    backgroundColorPosition ? "translateY(0)" : "translateY(-50px)"};
+  @media (min-width: 359px) and (orientation: portrait) {
+    transform: ${({ backgroundColorPosition }) =>
+      backgroundColorPosition ? "translateY(0)" : "translateY(-60px)"};
+  }
+`
+
 const TopBar = styled.div`
   display: flex;
   justify-content: space-between;
   height: 50px;
-
-  background-color: #171a1c;
   margin: 0;
   border: none;
   color: #cdbba5;
@@ -70,8 +83,25 @@ const TopBar = styled.div`
 
 const AppBar = ({ siteTitle }) => {
   const [openVerticalMenu, setOpenVerticalMenu] = useState(false)
+  const [backgroundColorPosition, setBackgroundColorPosition] = useState(false)
+
+  useEffect(() => {
+    if (window !== undefined) {
+      window.addEventListener("scroll", e => {
+        console.log(window)
+        if (window.pageYOffset > 50) {
+          setBackgroundColorPosition(true)
+        } else {
+          setBackgroundColorPosition(false)
+        }
+      })
+    }
+  }, [])
   return (
     <TopBar>
+      <BackgroundColor
+        backgroundColorPosition={backgroundColorPosition}
+      ></BackgroundColor>
       <div className="navigation_mobile-version">
         {openVerticalMenu ? (
           <FaTimes
