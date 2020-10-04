@@ -16,7 +16,7 @@ const List = styled.div`
 `
 const Section = styled.div`
   width: 90%;
-  padding: 5%;
+  padding: 10% 5% 5% 5%;
   display: flex;
   flex-direction: column;
   @media (min-width: 1023px) {
@@ -40,7 +40,12 @@ const Kontakt = () => (
           margin={"0 0 40px 0"}
           text="Nasza kancelaria znajduje się w centrum Żyrardowa - ul. 1 Maja 54 (plac Jana Pawła II)"
         />
-        <StyledText margin={"0"} text="Zachęcamy do kontaktu telefonicznego " />
+        <StyledText margin={"0"} text="Godziny otwarcia: " />
+        <StyledText margin={"0 0 5% 0"} text="pon-pt 9:00 - 17:00" />
+        <StyledText
+          margin={"0"}
+          text="Zachęcamy również do kontaktu telefonicznego "
+        />
         <StyledText margin={"0 0 5% 0"} text="+48 533 270 008" />
         <StyledText margin={"0"} text="Lub napisz do nas:" />
         <StyledText margin={"0"} text="bartoszewicz@zyrardow-adwokat.pl" />

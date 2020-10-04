@@ -15,8 +15,9 @@ const StyledImage = styled(Image)`
   z-index: 0;
   top: 0;
   width: 100%;
+  transform: translateY(-50px);
   @media (min-width: 359px) and (orientation: portrait) {
-    height: calc(100vh - 60px);
+    transform: translateY(-60px);
   }
 `
 
@@ -103,7 +104,7 @@ const Section = styled.section`
   min-height: 30vh;
   width: 90%;
   color: #171a1c;
-  padding: 5%;
+  padding: 10% 5% 5% 5%;
   display: flex;
   flex-direction: column;
   @media (min-width: 1023px) {

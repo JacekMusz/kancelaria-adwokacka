@@ -5,8 +5,7 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 
 const NavigationWrapper = styled.nav`
   width: 100%;
-  height: calc(100vh - 49px);
-  margin-top: 49px;
+  height: 100vh;
   top: 0;
   padding: 0 5% 10% 5%;
   background-color: #171a1c;
@@ -15,8 +14,7 @@ const NavigationWrapper = styled.nav`
   justify-content: space-around;
   display: ${({ openVerticalMenu }) => (openVerticalMenu ? "flex" : "none")};
   @media (min-width: 410px) and (position: portrait) {
-    margin-top: 59px;
-    height: calc(100vh - 59px);
+    height: 100vh;
   }
 `
 const LinkWrapper = styled.div`

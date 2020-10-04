@@ -8,7 +8,7 @@ import StyledText from "../components/Elements/styledText"
 const PageContainer = styled.div`
   width: 100%;
   display: flex;
-  padding: 5% 5% 0 5%;
+  padding: 10% 5% 0 5%;
   flex-direction: column;
   justify-content: space-around;
   @media (min-width: 1023px) {
@@ -18,7 +18,7 @@ const PageContainer = styled.div`
 `
 
 const Section = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   margin-bottom: 10%;

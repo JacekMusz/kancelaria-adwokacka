@@ -7,7 +7,7 @@ import StyledH3 from "../components/Elements/styledH3"
 
 const PageContainer = styled.div`
   width: 90%;
-  padding: 5%;
+  padding: 10% 5% 5% 5%;
   display: flex;
   flex-direction: column;
   overflow: hidden;

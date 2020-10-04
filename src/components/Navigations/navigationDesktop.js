@@ -5,19 +5,14 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 import { navigate } from "gatsby"
 
 const NavigationWrapper = styled.nav`
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 70%;
   height: 100%;
   padding: 0 5% 0 30%;
-  justify-content: space-around;
-  align-items: center;
-  display: flex;
-
-  @media (min-width: 767px) {
-    font-size: 14px;
-  }
-  @media (min-width: 1199px) {
-    font-size: 16px;
-  }
 `
 const LinkWrapper = styled.div`
   height: 100%;
@@ -43,6 +38,12 @@ const StyledLink = styled(Link)`
       width: 100%;
       transform: scaleX(1);
     }
+  }
+  @media (min-width: 767px) {
+    font-size: 15px;
+  }
+  @media (min-width: 1199px) {
+    font-size: 18px;
   }
 `
 

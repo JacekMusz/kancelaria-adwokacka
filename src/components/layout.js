@@ -18,9 +18,10 @@ const MainContainer = styled.div`
 
 const MainContent = styled.main`
   max-width: 100vw;
-
   background-color: rgb(240, 240, 240);
+  margin-top: 50px;
   @media (min-width: 359px) and (orientation: portrait) {
+    margin-top: 60px;
   }
 `
 const Footer = styled.footer`

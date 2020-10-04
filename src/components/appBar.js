@@ -11,7 +11,7 @@ const BackgroundColor = styled.div`
   width: 100%;
   height: 100%;
   background-color: #171a1c;
-  top: 0px;
+  top: 0;
   transition: 0.3s;
   transform: ${({ backgroundColorPosition }) =>
     backgroundColorPosition ? "translateY(0)" : "translateY(-50px)"};
@@ -42,6 +42,7 @@ const TopBar = styled.div`
     position: absolute;
     top: 10px;
     right: 15px;
+    z-index: 100;
   }
   h4 {
     font-size: 20px;
@@ -81,22 +82,29 @@ const TopBar = styled.div`
   }
 `
 
-const AppBar = ({ siteTitle }) => {
+const AppBar = () => {
   const [openVerticalMenu, setOpenVerticalMenu] = useState(false)
-  const [backgroundColorPosition, setBackgroundColorPosition] = useState(false)
+  const [backgroundColorPosition, setBackgroundColorPosition] = useState(
+    window.location.pathname !== "/"
+  )
 
   useEffect(() => {
+    console.log(window.location.pathname)
     if (window !== undefined) {
       window.addEventListener("scroll", e => {
-        console.log(window)
-        if (window.pageYOffset > 50) {
+        if (window.location.pathname !== "/") {
+          setBackgroundColorPosition(true)
+        } else if (
+          window.pageYOffset > 50 &&
+          window.location.pathname === "/"
+        ) {
           setBackgroundColorPosition(true)
         } else {
           setBackgroundColorPosition(false)
         }
       })
     }
-  }, [])
+  }, [window])
   return (
     <TopBar>
       <BackgroundColor
