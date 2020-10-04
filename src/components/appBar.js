@@ -85,12 +85,11 @@ const TopBar = styled.div`
 const AppBar = () => {
   const [openVerticalMenu, setOpenVerticalMenu] = useState(false)
   const [backgroundColorPosition, setBackgroundColorPosition] = useState(
-    window !== undefined && window.location.pathname !== "/"
+    typeof window !== "undefined" && window.location.pathname !== "/"
   )
 
   useEffect(() => {
-    console.log(window.location.pathname)
-    if (window !== undefined) {
+    if (typeof window !== "undefined") {
       window.addEventListener("scroll", e => {
         if (window.location.pathname !== "/") {
           setBackgroundColorPosition(true)
@@ -104,7 +103,7 @@ const AppBar = () => {
         }
       })
     }
-  }, [window])
+  }, [])
   return (
     <TopBar>
       <BackgroundColor
