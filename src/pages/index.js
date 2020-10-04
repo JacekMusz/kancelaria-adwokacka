@@ -1,12 +1,13 @@
-import React from "react"
+import React, { Suspense } from "react"
 import styled from "styled-components"
-import Layout from "../components/layout"
 import Image from "gatsby-image"
 import SEO from "../components/seo"
 import ArticleContainer from "../components/Elements/article"
 import Button from "./../components/Elements/button"
 import StyledH3 from "../components/Elements/styledH3"
 import StyledText from "../components/Elements/styledText"
+import { useInView } from "react-intersection-observer"
+const Layout = React.lazy(() => import("../components/layout"))
 
 const StyledImage = styled(Image)`
   object-fit: cover;
@@ -132,6 +133,14 @@ const Section = styled.section`
 
 export const query = graphql`
   {
+    allDatoCmsArticle {
+      nodes {
+        title
+        id
+        author
+        paragraph
+      }
+    }
     imageHero: file(name: { eq: "hero-image-darken" }) {
       childImageSharp {
         fluid(quality: 100, grayscale: true) {
@@ -145,73 +154,91 @@ export const query = graphql`
 const articlesData = [
   {
     number: 1,
-    title: "Pierwszy artykuł",
-    entry: "Urywek artykułu - 50 pierwszych znaków ...",
-    date: "12.12.12",
+    title: "Nowa strona Kancelarii",
+    entry: "Od października 2020 roku Kancelaria będzie miała nową stronę",
+    date: "04.10.20",
     article:
-      "Ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of(The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, , comes from a line in section 1.10.32.",
+      "Serdecznie witamy na nowej stronie internetowej naszej kancelarii.",
   },
   {
     number: 2,
-    title: "Mediacje - czyli nasza nowa oferta",
-    entry: "Urywek artykułu - 50 pierwszych znaków ...",
-    date: "20.06.20",
+    title: "Mediacje",
+    entry: "Poszerzenie naszej oferty usług prawniczych.",
+    date: "04.10.20",
     article:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+      "Od wakacji 2020 roku oferta naszej kancelarii została poszerzona o mediacje. Więcej szczegółów w zakładce 'Mediacje'",
   },
 ]
 
 articlesData.reverse()
 
 const IndexPage = props => {
+  console.log(props.data)
+  const isSSR = typeof window === "undefined"
   return (
-    <Layout>
-      <SEO title="Start" />
-      <StyledImage
-        fluid={props.data.imageHero.childImageSharp.fluid}
-        alt="primary-background"
-        objectPosition="100% 0%"
-      ></StyledImage>
-      <TitlesContainer>
-        <h2>Adwokat</h2>
-        <h1>Katarzyna Bartoszewicz</h1>
-      </TitlesContainer>
-      <SectionsContainer>
-        <Section>
-          <StyledH3 margin={"5% 0"} text={"O koncelarii"}></StyledH3>
-          <StyledText
-            text={`Kancelaria świadczy pomoc prawną podmiotom fizycznym,
-            gospodarczym oraz instytucjom. Adwokat Katarzyna
-            Bartoszewicz zdobywała swoje doświadczenie zawodowe
-            współpracując z innymi kancelariami oraz instytucjami
-            publicznymi. Obecnie od 2011 r. prowadzi własną praktykę
-            prawniczą. Szerokiego zakres usług obejmuje prawo karne,
-            cywilne, rodzinne, gospodarcze, prawo pracy oraz prawo
-            spółek. Kancelaria ponadto współpracuje z Kancelariami
-            Notarialnymi oraz Komorniczymi.`}
-          ></StyledText>
-        </Section>
-        <Section className="section-news" id="news">
-          <StyledH3 margin={"5% 0"} text={"Aktualności"}></StyledH3>
-          <div className="articles-container">
-            {articlesData.map((item, number) => {
-              return (
-                <ArticleContainer
-                  number={item.number}
-                  entry={item.entry}
-                  title={item.title}
-                  date={item.date}
-                  article={item.article}
-                />
-              )
-            })}
-            <div className="show-more-articles-button">
-              <Button text={"Pokaż więcej artykułów"} />
+    <>
+      {!isSSR && (
+        <Suspense
+          fallback={
+            <div style={{ color: "black", width: "100%", height: "100%" }}>
+              Loading...
             </div>
-          </div>
-        </Section>
-      </SectionsContainer>
-    </Layout>
+          }
+        >
+          <Layout>
+            <SEO title="Start" />
+
+            <StyledImage
+              fluid={props.data.imageHero.childImageSharp.fluid}
+              alt="primary-background"
+              objectPosition="100% 0"
+            ></StyledImage>
+            <TitlesContainer>
+              <h2>Adwokat</h2>
+              <h1>Katarzyna Bartoszewicz</h1>
+            </TitlesContainer>
+            <SectionsContainer>
+              <Section>
+                <StyledH3 margin={"5% 0"} text={"O koncelarii"}></StyledH3>
+                <StyledText
+                  text={`Kancelaria świadczy pomoc prawną podmiotom fizycznym,
+      gospodarczym oraz instytucjom. Adwokat Katarzyna
+      Bartoszewicz zdobywała swoje doświadczenie zawodowe
+      współpracując z innymi kancelariami oraz instytucjami
+      publicznymi. Obecnie od 2011 r. prowadzi własną praktykę
+      prawniczą. Szerokiego zakres usług obejmuje prawo karne,
+      cywilne, rodzinne, gospodarcze, prawo pracy oraz prawo
+      spółek. Kancelaria ponadto współpracuje z Kancelariami
+      Notarialnymi oraz Komorniczymi.`}
+                ></StyledText>
+              </Section>
+              <Section className="section-news" id="news">
+                <StyledH3 margin={"5% 0"} text={"Aktualności"}></StyledH3>
+                <div className="articles-container">
+                  {articlesData.map((item, number) => {
+                    return (
+                      <ArticleContainer
+                        number={item.number}
+                        entry={item.entry}
+                        title={item.title}
+                        date={item.date}
+                        article={item.article}
+                      />
+                    )
+                  })}
+
+                  {/* 
+      Will be add after DatoCMS will be implemented
+      <div className="show-more-articles-button">
+        <Button text={"Pokaż więcej artykułów"} />
+      </div> */}
+                </div>
+              </Section>
+            </SectionsContainer>
+          </Layout>
+        </Suspense>
+      )}
+    </>
   )
 }
 
