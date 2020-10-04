@@ -226,12 +226,10 @@ const IndexPage = props => {
                       />
                     )
                   })}
-
-                  {/* 
-      Will be add after DatoCMS will be implemented
-      <div className="show-more-articles-button">
-        <Button text={"Pokaż więcej artykułów"} />
-      </div> */}
+                  Will be add after DatoCMS will be implemented
+                  <div className="show-more-articles-button">
+                    <Button disabled={true} text={"Pokaż więcej artykułów"} />
+                  </div>
                 </div>
               </Section>
             </SectionsContainer>
