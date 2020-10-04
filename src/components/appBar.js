@@ -85,7 +85,7 @@ const TopBar = styled.div`
 const AppBar = () => {
   const [openVerticalMenu, setOpenVerticalMenu] = useState(false)
   const [backgroundColorPosition, setBackgroundColorPosition] = useState(
-    window.location.pathname !== "/"
+    window !== undefined && window.location.pathname !== "/"
   )
 
   useEffect(() => {
