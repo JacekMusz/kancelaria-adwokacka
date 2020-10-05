@@ -14,22 +14,25 @@ const Article = styled.article`
   padding: 10px;
   transition: 0.3s;
   border-left: 1px solid #cdbba5;
-  .article-date {
+  .article__date {
     font-size: 10px;
     width: 100%;
     text-align: right;
     line-height: 12px;
   }
-  .article-header {
+  .article__header {
     display: flex;
     flex-direction: row;
-    h6 {
-      width: 80%;
-    }
   }
-  .text {
-    font-size: 14px;
+  .article__text {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 20px;
     transition: 0.9s;
+  }
+  .article__title {
+    width: 80%;
+    font-size: 16px;
   }
 
   &:hover {
@@ -37,14 +40,44 @@ const Article = styled.article`
     transform: scale(1.015);
   }
   @media (min-width: 360px) {
+    .article__text {
+      font-size: 13px;
+      line-height: 22px;
+    }
   }
   @media (min-width: 410px) {
+    .article__date {
+      font-size: 11px;
+    }
+    .article__title {
+      font-size: 20px;
+    }
+    .article__text {
+      font-size: 14px;
+    }
   }
   @media (min-width: 767px) {
+    .article__date {
+      font-size: 12px;
+    }
+    .article__title {
+      font-size: 21px;
+    }
+    .article__text {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
   @media (min-width: 1023px) {
     border-left: none;
     border-right: 1px solid #cdbba5;
+    .article__title {
+      font-size: 22px;
+    }
+    .article__text {
+      font-size: 15px;
+      line-height: 25px;
+    }
   }
   @media (min-width: 1199px) {
   }
@@ -69,13 +102,14 @@ const StyledButton = styled.button`
   }
 `
 
-const ArticleContainer = ({ title, date, article, entry }) => {
+const ArticleContainer = ({ title, date, articleText }) => {
+  const entry = articleText.substr(0, 40) + "..."
   const [showArticle, setShowArticle] = useState(false)
   return (
     <Article>
-      <p className="article-date">{date}</p>
-      <h6>{title}</h6>
-      <p className="text">{showArticle ? article : entry}</p>
+      <p className="article__date">{date}</p>
+      <h6 className="article__title">{title}</h6>
+      <p className="article__text">{showArticle ? articleText : entry}</p>
       <StyledButton
         style={{ alignSelf: "flex-end" }}
         onClick={() => setShowArticle(!showArticle)}

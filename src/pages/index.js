@@ -105,7 +105,7 @@ const Section = styled.section`
   min-height: 30vh;
   width: 90%;
   color: #171a1c;
-  padding: 10% 5% 5% 5%;
+  padding: 5% 5% 5% 5%;
   display: flex;
   flex-direction: column;
   @media (min-width: 1023px) {
@@ -131,16 +131,29 @@ const Section = styled.section`
   }
 `
 
+//After DatoCMS integration
+// export const query = graphql`
+//   {
+//     allDatoCmsArticle {
+//       nodes {
+//         title
+//         id
+//         author
+//         paragraph
+//       }
+//     }
+//     imageHero: file(name: { eq: "hero-image-darken" }) {
+//       childImageSharp {
+//         fluid(quality: 100, grayscale: true) {
+//           ...GatsbyImageSharpFluid_noBase64
+//         }
+//       }
+//     }
+//   }
+// `
+
 export const query = graphql`
   {
-    allDatoCmsArticle {
-      nodes {
-        title
-        id
-        author
-        paragraph
-      }
-    }
     imageHero: file(name: { eq: "hero-image-darken" }) {
       childImageSharp {
         fluid(quality: 100, grayscale: true) {
@@ -155,25 +168,22 @@ const articlesData = [
   {
     number: 1,
     title: "Nowa strona Kancelarii",
-    entry: "Od października 2020 roku Kancelaria będzie miała nową stronę",
     date: "04.10.20",
-    article:
-      "Serdecznie witamy na nowej stronie internetowej naszej kancelarii.",
+    articleText:
+      "Szanowni Państwo, Zapraszam do zapoznania się z ofertą kancelarii na nowej stornie internetowej. Informuję również, iż nastąpiła zmiana nazwiska adwokata Katarzyny Pałuby na nazwisko Bartoszewicz.",
   },
   {
     number: 2,
     title: "Mediacje",
-    entry: "Poszerzenie naszej oferty usług prawniczych.",
     date: "04.10.20",
-    article:
-      "Od wakacji 2020 roku oferta naszej kancelarii została poszerzona o mediacje. Więcej szczegółów w zakładce 'Mediacje'",
+    articleText:
+      "Uprzejmie informuję, iż od czerwca 2020 r. kancelaria świadczy również usługi z zakresu mediacji. Więcej szczegółów w zakładce 'Mediacje'",
   },
 ]
 
 articlesData.reverse()
 
 const IndexPage = props => {
-  console.log(props.data)
   const isSSR = typeof window === "undefined"
   return (
     <>
@@ -181,7 +191,7 @@ const IndexPage = props => {
         <Suspense
           fallback={
             <div style={{ color: "black", width: "100%", height: "100%" }}>
-              Loading...
+              Trwa ładowanie strony...
             </div>
           }
         >
@@ -222,14 +232,14 @@ const IndexPage = props => {
                         entry={item.entry}
                         title={item.title}
                         date={item.date}
-                        article={item.article}
+                        articleText={item.articleText}
                       />
                     )
                   })}
-                  Will be add after DatoCMS will be implemented
+                  {/* Will be add after DatoCMS will be implemented
                   <div className="show-more-articles-button">
                     <Button disabled={true} text={"Pokaż więcej artykułów"} />
-                  </div>
+                  </div> */}
                 </div>
               </Section>
             </SectionsContainer>
