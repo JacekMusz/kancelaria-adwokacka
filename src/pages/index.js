@@ -1,4 +1,4 @@
-import React, { Suspense } from "react"
+import React, { Suspense, useEffect } from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
 import SEO from "../components/seo"
@@ -185,31 +185,39 @@ articlesData.reverse()
 
 const IndexPage = props => {
   const isSSR = typeof window === "undefined"
+  useEffect(() => {})
   return (
     <>
+      {" "}
       {!isSSR && (
         <Suspense
           fallback={
-            <div style={{ color: "black", width: "100%", height: "100%" }}>
+            <div
+              style={{
+                color: "black",
+                width: "100%",
+                height: "100%",
+              }}
+            >
               Trwa ładowanie strony...
             </div>
           }
         >
           <Layout>
             <SEO title="Start" />
-
             <StyledImage
               fluid={props.data.imageHero.childImageSharp.fluid}
               alt="primary-background"
               objectPosition="100% 0"
-            ></StyledImage>
+            ></StyledImage>{" "}
             <TitlesContainer>
-              <h2>Adwokat</h2>
-              <h1>Katarzyna Bartoszewicz</h1>
-            </TitlesContainer>
+              <h2> Adwokat </h2> <h1> Katarzyna Bartoszewicz </h1>{" "}
+            </TitlesContainer>{" "}
             <SectionsContainer>
-              <Section>
-                <StyledH3 margin={"5% 0"} text={"O koncelarii"}></StyledH3>
+              <Section id="about">
+                <StyledH3 margin={"5% 0"} text={"O kancelarii"}>
+                  {" "}
+                </StyledH3>{" "}
                 <StyledText
                   text={`Kancelaria świadczy pomoc prawną podmiotom fizycznym,
       gospodarczym oraz instytucjom. Adwokat Katarzyna
@@ -220,11 +228,14 @@ const IndexPage = props => {
       cywilne, rodzinne, gospodarcze, prawo pracy oraz prawo
       spółek. Kancelaria ponadto współpracuje z Kancelariami
       Notarialnymi oraz Komorniczymi.`}
-                ></StyledText>
-              </Section>
+                ></StyledText>{" "}
+              </Section>{" "}
               <Section className="section-news" id="news">
-                <StyledH3 margin={"5% 0"} text={"Aktualności"}></StyledH3>
+                <StyledH3 margin={"5% 0"} text={"Aktualności"}>
+                  {" "}
+                </StyledH3>{" "}
                 <div className="articles-container">
+                  {" "}
                   {articlesData.map((item, number) => {
                     return (
                       <ArticleContainer
@@ -235,19 +246,19 @@ const IndexPage = props => {
                         articleText={item.articleText}
                       />
                     )
-                  })}
+                  })}{" "}
                   {/* Will be add after DatoCMS will be implemented
-                  <div className="show-more-articles-button">
-                    <Button disabled={true} text={"Pokaż więcej artykułów"} />
-                  </div> */}
-                </div>
-              </Section>
-            </SectionsContainer>
-          </Layout>
+                            <div className="show-more-articles-button">
+                              <Button disabled={true} text={"Pokaż więcej artykułów"} />
+                            </div> */}{" "}
+                </div>{" "}
+              </Section>{" "}
+            </SectionsContainer>{" "}
+          </Layout>{" "}
         </Suspense>
-      )}
+      )}{" "}
     </>
   )
 }
 
-export default IndexPage
+export default React.memo(IndexPage)

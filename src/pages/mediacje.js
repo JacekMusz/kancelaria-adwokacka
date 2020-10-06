@@ -33,12 +33,14 @@ const Aktualnosci = () => (
     <SEO title="mediacje" />
     <PageContainer>
       <Section>
-        <StyledH3 margin={"5% 0 "} text={"Mediacje"}></StyledH3>
+        <StyledH3 margin={"5% 0 "} text={"Mediacje"}>
+          {" "}
+        </StyledH3>{" "}
         <StyledText
           text={` Kancelaria prowadzi również spotkania mediacyjne. Adwokat Katarzyna
           Bartoszewicz jest wpisana na listę stałych mediatorów sądowych przy
           Sądzie Okręgowym w Płocku. Realizuje mediacje nie tylko na zlecenie
-          sądu ale również prywatne. Mediacja jest często atr akcyjną
+          sądu ale również prywatne. Mediacja jest często atrakcyjną
           alternatywą dla poszukiwania rozwiązania sporu na drodze postępowania
           sądowego. Warunkiem skorzystania z mediacji jest to, aby strony miały
           wolę rozwiązania konfliktu. Rolą mediatora jest stworzenie im warunków
@@ -47,9 +49,9 @@ const Aktualnosci = () => (
           większości przypadków niższe koszty dla stron. Ponadto, w ramach
           zawartej ugody strony mają często szerszy zakres rozwiązań, które nie
           są dostępne dla rozstrzygnięcia sądowego.`}
-        />
-      </Section>
-    </PageContainer>
+        />{" "}
+      </Section>{" "}
+    </PageContainer>{" "}
   </Layout>
 )
 

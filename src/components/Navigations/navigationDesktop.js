@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import { navigate } from "gatsby"
+//import { navigate } from "@reach/router"
 
 const NavigationWrapper = styled.nav`
   position: relative;
@@ -48,38 +49,36 @@ const StyledLink = styled(Link)`
 `
 
 const NavigationDesktop = () => {
-  const handleScroll = () => {
-    setTimeout(() => {
-      scrollTo("#news")
-    }, 200)
-
-    window.onload = scrollTo("#news")
+  const handleScroll = pagelocation => {
+    if (typeof window !== "undefined" && window.location.pathname !== "/") {
+      setTimeout(() => {
+        scrollTo(pagelocation)
+      }, 200)
+    }
   }
   return (
     <NavigationWrapper>
       <LinkWrapper>
         {" "}
-        <StyledLink to="/">O koncelarii</StyledLink>
-      </LinkWrapper>
-      <LinkWrapper>
-        <StyledLink to="/" onClick={() => handleScroll()}>
-          Aktualności
-        </StyledLink>
-      </LinkWrapper>
+        <StyledLink to="/" onClick={() => handleScroll("#about")}>
+          {" "}
+          O koncelarii{" "}
+        </StyledLink>{" "}
+      </LinkWrapper>{" "}
       <LinkWrapper>
         {" "}
-        <StyledLink to="/dzialyprawa">Działy prawa</StyledLink>
-      </LinkWrapper>
+        <StyledLink to="/dzialyprawa"> Działy prawa </StyledLink>{" "}
+      </LinkWrapper>{" "}
       <LinkWrapper>
         {" "}
-        <StyledLink to="/klienci">Klienci</StyledLink>
-      </LinkWrapper>
+        <StyledLink to="/klienci"> Klienci </StyledLink>{" "}
+      </LinkWrapper>{" "}
       <LinkWrapper>
-        <StyledLink to="/mediacje">Mediacje</StyledLink>
-      </LinkWrapper>
+        <StyledLink to="/mediacje"> Mediacje </StyledLink>{" "}
+      </LinkWrapper>{" "}
       <LinkWrapper>
-        <StyledLink to="/kontakt">Kontakt</StyledLink>
-      </LinkWrapper>
+        <StyledLink to="/kontakt"> Kontakt </StyledLink>{" "}
+      </LinkWrapper>{" "}
     </NavigationWrapper>
   )
 }
