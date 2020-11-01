@@ -3,10 +3,9 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import SEO from "../components/seo"
 import ArticleContainer from "../components/Elements/article"
-import Button from "./../components/Elements/button"
 import StyledH3 from "../components/Elements/styledH3"
 import StyledText from "../components/Elements/styledText"
-import { useInView } from "react-intersection-observer"
+
 const Layout = React.lazy(() => import("../components/layout"))
 
 const StyledImage = styled(Image)`
@@ -131,29 +130,16 @@ const Section = styled.section`
   }
 `
 
-//After DatoCMS integration
-// export const query = graphql`
-//   {
-//     allDatoCmsArticle {
-//       nodes {
-//         title
-//         id
-//         author
-//         paragraph
-//       }
-//     }
-//     imageHero: file(name: { eq: "hero-image-darken" }) {
-//       childImageSharp {
-//         fluid(quality: 100, grayscale: true) {
-//           ...GatsbyImageSharpFluid_noBase64
-//         }
-//       }
-//     }
-//   }
-// `
-
 export const query = graphql`
   {
+    allDatoCmsArticle {
+      nodes {
+        title
+        author
+        paragraph
+        date
+      }
+    }
     imageHero: file(name: { eq: "hero-image-darken" }) {
       childImageSharp {
         fluid(quality: 100, grayscale: true) {
@@ -169,14 +155,14 @@ const articlesData = [
     number: 1,
     title: "Nowa strona Kancelarii",
     date: "04.10.20",
-    articleText:
+    paragraph:
       "Szanowni Państwo, Zapraszam do zapoznania się z ofertą kancelarii na nowej stornie internetowej. Informuję również, iż nastąpiła zmiana nazwiska adwokata Katarzyny Pałuby na nazwisko Bartoszewicz.",
   },
   {
     number: 2,
     title: "Mediacje",
     date: "04.10.20",
-    articleText:
+    paragraph:
       "Uprzejmie informuję, iż od czerwca 2020 r. kancelaria świadczy również usługi z zakresu mediacji. Więcej szczegółów w zakładce 'Mediacje'",
   },
 ]
@@ -184,6 +170,7 @@ const articlesData = [
 articlesData.reverse()
 
 const IndexPage = props => {
+  console.log(props.data.allDatoCmsArticle.nodes)
   const isSSR = typeof window === "undefined"
   return (
     <>
@@ -197,7 +184,6 @@ const IndexPage = props => {
         >
           <Layout>
             <SEO title="Start" />
-
             <StyledImage
               fluid={props.data.imageHero.childImageSharp.fluid}
               alt="primary-background"
@@ -225,17 +211,32 @@ const IndexPage = props => {
               <Section className="section-news" id="news">
                 <StyledH3 margin={"5% 0"} text={"Aktualności"}></StyledH3>
                 <div className="articles-container">
-                  {articlesData.map((item, number) => {
-                    return (
-                      <ArticleContainer
-                        number={item.number}
-                        entry={item.entry}
-                        title={item.title}
-                        date={item.date}
-                        articleText={item.articleText}
-                      />
-                    )
-                  })}
+                  {props.data.allDatoCmsArticle?.nodes?.length > 0
+                    ? props.data.allDatoCmsArticle?.nodes.map((item, index) => {
+                        return (
+                          <ArticleContainer
+                            key={index}
+                            number={item.number}
+                            entry={item.entry}
+                            title={item.title}
+                            date={item.date}
+                            articleText={item.paragraph}
+                          />
+                        )
+                      })
+                    : articlesData.map((item, index) => {
+                        return (
+                          <ArticleContainer
+                            number={item.number}
+                            key={index}
+                            entry={item.entry}
+                            title={item.title}
+                            date={item.date}
+                            articleText={item.paragraph}
+                          />
+                        )
+                      })}
+
                   {/* Will be add after DatoCMS will be implemented
                   <div className="show-more-articles-button">
                     <Button disabled={true} text={"Pokaż więcej artykułów"} />

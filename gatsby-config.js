@@ -3,8 +3,12 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `Katarzyna Bartoszewicz`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Kancelaria świadczy pomoc prawną podmiotom fizycznym,
+    gospodarczym oraz instytucjom. Adwokat Katarzyna
+    Bartoszewicz zdobywała swoje doświadczenie zawodowe
+    współpracując z innymi kancelariami oraz instytucjami
+    publicznymi.`,
+    author: `Katarzyna Bartoszewicz`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

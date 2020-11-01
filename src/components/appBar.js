@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
@@ -121,7 +120,6 @@ const AppBar = () => {
             onClick={() => setOpenVerticalMenu(!openVerticalMenu)}
           />
         )}
-
         <NavigationMobile
           openVerticalMenu={openVerticalMenu}
           setOpenVerticalMenu={setOpenVerticalMenu}

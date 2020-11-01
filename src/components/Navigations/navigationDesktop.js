@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import { navigate } from "gatsby"
 
 const NavigationWrapper = styled.nav`
   position: relative;

@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import Button from "./button"
 
 const Article = styled.article`
   width: 100%;

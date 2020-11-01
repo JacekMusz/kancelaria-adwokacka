@@ -67,6 +67,11 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: "keywords",
+          content:
+            "Adwokat, adwokat, prawnik, Żyrardów, prawnik Żyrardów, pomoc prawna, rozwód, alimenty, prawnik dla przedsiębiorcy, doradztwo prawne",
+        },
       ].concat(meta)}
     />
   )
